@@ -222,7 +222,7 @@
 // const isAge = true;
 // const isClose = false;
 // const isChecked = false;
-// console.log(isAge || isClose || isChecked); // true gar yoki (else) || operatorida bittaham tru bolsa faqat true chiqaradi
+// console.log(isAge || isClose || isChecked); // true gar yoki (else) || operatorida bittaham true bolsa faqat true chiqaradi
 
 
 // const isAge = true;
