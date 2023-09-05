@@ -162,11 +162,10 @@
 // const sites = prompt("My favorite pages");
 // console.log(`https://ok.ru/${videos}`);
 
-//////////////////////Operatorlar//////////////////////
+/////////////// Operatorlar//////////////////////
 
 // console.log(6 + + "Nur");//nan number malumot turi bilan string malumot turi qo'shilmaydi shu uchun nan yani not aare number degan malumot qaytaradi
 // console.log(6 + + "6");//12 dicrementda  number malumot turiga qattiy pilus bilan strimg malumotni ichida raqam bolsa qattiy rejim bolgani uchun togrin hissoblaydi
-
 
 // console.log("Nur " + "Yorov");//strings
 // console.log(6 + + "Yorov"); //NANnot are number
@@ -214,7 +213,6 @@
 // const isClose = false;
 // console.log(isAge && isClose); // false
 
-
 // const isAge = true;
 // const isClose = false;
 // console.log(isAge || isClose); // true
@@ -222,8 +220,7 @@
 // const isAge = true;
 // const isClose = false;
 // const isChecked = false;
-// console.log(isAge || isClose || isChecked); // true gar yoki (else) || operatorida bittaham true bolsa faqat true chiqaradi
-
+// console.log(isAge || isClose || isChecked); // true gar yoki (else) || operatorida bittaham true` bolsa faqat true chiqaradi
 
 // const isAge = true;
 // const isClose = true;
@@ -235,8 +232,6 @@
 // const isChecked = false;
 // console.log(isAge && isClose && !isChecked);// !natijani chappasini chiqaradi
 
-
-
 // console.log( 2 + 2 * 2 === 8 );//false birinchi ko'peytirvoladi
 // console.log( 2 + 2 * 2 === 6 );//true birinchi ko'peytirvoladi
 // console.log( 2 + 2 * 2 !== 8 );//true chunki 8 6 ga teng emasmi degan savolga ha teng ema sdeb javob bergan hissoblanadi
@@ -247,3 +242,280 @@
 // console.log(5 * 5 == "26");// bu false chunki number malumot turei bilan string malumotini qiymatini qoshganda bitta kopligi uchun false chiqaradi
 
 // console.log(5 * 5 === "25");// false chiqaradi chunki 3 ta = belgisi juda qattiy javob beradi false bolishini sababi juda qattiy javobda number malumot turi string malumot turi bilan teng emas, sababi biri raqam biri text malumot turi
+
+/////////////////Homework/////////////////////////////
+// const numberOfSeries = +prompt("Nechta serial ko'rdingiz?", "");
+
+// const seriesDB = {
+//     count: numberOfSeries,
+//     series: {},
+//     actors: {},
+//     genres: [],
+//     privat: false,
+// };
+
+// const a = prompt("Ohirgi ko'rgan serialingiz"),
+//     b = prompt("Nechchi baho berasiz?"),
+//     c = prompt("Ohirgi ko'rgan serialingiz"),
+//     d = prompt("Nechchi baho berasiz?");
+// seriesDB.series[a] = b;
+// seriesDB.series[c] = d;
+
+// console.log(seriesDB);
+
+// const theif = {
+//     jacket: "black",
+// };
+
+// const property = "age",
+//     value = "30";
+
+// theif[property] = value;
+
+// console.log(theif);
+
+// const numberOfSeries = +prompt("Nechta serial ko'rdingiz?", "");
+
+// const seriesDB = {
+//     count: numberOfSeries,
+//     series: {},
+//     actors: {},
+//     genres: [],
+//     privat: false,
+// };
+
+// const a = prompt("Ohirgi ko'rgan serialingiz"),
+//     b = prompt("Nechchi baho berasiz?"),
+//     c = prompt("Ohirgi ko'rgan serialingiz"),
+//     d = prompt("Nechchi baho berasiz?"),
+//     g = prompt("Ko'rgan serialingiz qanday janrda edi");
+
+// seriesDB.series[a] = b;
+// seriesDB.series[c] = d;
+// seriesDB.genres[g] = g;
+
+// console.log(seriesDB);
+
+/////////////////////Shartli Operatorlar////////////////////
+// const age = +prompt("How ald are you 1?", "");
+
+// if (age >= 18) {
+//     console.log("Welcome");
+//     alert("Welcome 'alert'")//or alert the show modal screen
+// } else {
+//     console.log("No entry 1");
+//     alert("No entry 'alert'")//or alert the show modal screen 
+// }
+
+// const age = +prompt("How ald are you 1?", "");
+
+// if (age > 25) {
+//     console.log("Horror movies");
+// } else if (age > 18) {
+//     console.log("War movies");
+// } else {
+//     console.log("Cartoon");
+// }
+
+// const age = +prompt("How ald are you 1?", "");
+
+// if (age > 25) { 
+//     console.log("Horror movies");
+// } else {
+//     console.log("Cartoon");
+// }
+
+// (age > 25) ? console.log("Horror movies") : console.log("Cartoon");// uchtalik operator qisqartirib yiz if else bilgilar bilan
+
+// const age = +prompt("How ald are you 1?", "");
+// age > 25 ? console.log("Horror movies") : console.log("Cartoon");
+
+// const color = "red";// red green slowly traffic jam//
+// //switch case faqat qattiy rejimda ishlaydi
+// switch (color) {
+//     case "red":
+//         console.log("stop");
+//         // alert("Stop")
+//         break;
+//     case "green":
+//         console.log("goo")
+//         // alert("Goo")
+//         break;
+//         case "yellow":
+//             console.log("slowly");
+//             // alert("Slowly")
+//             break;
+//             default:
+//             console.log("traffic jam");
+// }
+
+
+
+// const color =prompt("") ;// red green slowly traffic jam//
+// //switch case faqat qattiy rejimda ishlaydi
+// switch (color) {
+//     case "red":
+//         // console.log("stop");
+//         alert("Stop")
+//         break;
+//     case "green":
+//         // console.log("goo")
+//         alert("Goo")
+//         break;
+//         case "yellow":
+//             // console.log("slowly");
+//             alert("Slowly")
+//             break;
+//             default:
+//             // console.log("traffic jam");
+//             alert("Traffic jam")
+//         }
+
+/////////////////////Sikl/////////////////////////////////
+
+//First
+// let startNum = 1;
+// while (startNum <= 100) {
+//     console.log(startNum);
+//    // alert(startNum)
+//     startNum++
+// }
+
+//Second
+// let startNum = 1;
+// do {
+//     console.log(startNum);
+//     startNum++
+// } while (startNum <= 10)
+
+//Third //Eng Ko'p Ishlatiladigan usuli
+// for (let i = 1; i <= 8; i++) {
+//     console.log(i);
+// }
+
+//Yana boshqa usuli
+//  let num = 10; 
+//  for (let i = 1; i < 8; i++ ){
+//         console.log(num);
+//         num++
+//     }
+
+
+//  let num = 10;
+//  for (let i = 1; i <= 10; i++ ){
+//     if (i === 8){
+//         break
+//     }
+//     console.log(i);
+//  }
+
+//  let num = 10;
+//  for (let i = 1; i <= 10; i++ ){
+//     if (i === 9){
+// continue
+//     }
+//     console.log(i);
+//  }
+
+
+
+////////////////Homework i do/////////////////////////////
+
+// const numberOfSeries = +prompt("Nechta serial ko'rdingiz?", "");
+
+// if (numberOfSeries <= 5) {
+//     console.log("Kam serial ko'ripsiz");
+// }
+// else if
+//     (numberOfSeries <= 10) {
+//     console.log("Siz classik tamoshabin ekansiz");
+// }
+// else {
+//     console.log("Siz serialchi zvezda ekansiz");
+// }
+
+
+// // numberOfSeries <= 5 ? console.log("Kam serial ko'ripsiz") : console.log("Siz serialchi zvezda ekansiz") ;
+
+
+// const seriesDB = {
+//     count: numberOfSeries,
+//     series: {},
+//     actors: {},
+//     genres: [],
+//     privat: false,
+// };
+
+// const a = prompt("Ohirgi ko'rgan serialingiz"),
+
+//     b = prompt("Nechchi baho berasiz?"),
+//     c = prompt("Ohirgi ko'rgan serialingiz"),
+//     d = prompt("Nechchi baho berasiz?"),
+//     g = prompt("Ko'rgan serialingiz qanday janrda edi"),
+//     j = prompt("Umar ibn Hattob serialidagi bosh roldagi aktyorlarni ayting");
+
+// seriesDB.series[a] = b;
+// seriesDB.series[c] = d;
+// seriesDB.genres[g] = g;
+// seriesDB.actors[j] = j
+
+// console.log(seriesDB);
+
+// /////////////////////Homewor with the teacher////////////
+
+const numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
+const seriesDB = {
+    count: numberOfSeries,
+    series: {},
+    actors: {},
+    genres: [],
+    private: false,
+};
+for (let i = 0; i < 2; i++) {
+    const a = prompt("Ohirgi ko'rgan serialingiz?"),
+        b = prompt("Nechchi baho berasiz?");
+    if (a != null && b != null && a != "" && b != "") {
+        seriesDB.series[a] = b;
+        console.log("Done");
+    } else {
+        console.log("Error");
+        i--
+    }
+}
+
+if (seriesDB.count < 5) {
+    console.log("Kam serial ko'ripsiz");
+}
+ else if (seriesDB.count >= 5 && seriesDB.count < 10) {
+    console.log(" Siz klassik tomoshabin ekansiz");
+}
+ else if (seriesDB.count >= 10) {
+    console.log("Siz serialchi zvezda ekansiz");
+}
+else {
+    console.log("Error");
+}
+
+console.log(seriesDB);
+
+
+
+
+
+//////////////////////////Mustaqil ish///////////////////////
+
+//switch case faqat qattiy rejimda ishlaydi
+// const color = "red";
+// switch (color) {
+//     case "red":
+//         console.log("stop");
+//         break;
+//     case "green":
+//         console.log("goo")
+//         break;
+//     case "yellow":
+//         console.log("slowly");
+//         break;
+//     default:
+//         console.log("traffic jam");
+// }
