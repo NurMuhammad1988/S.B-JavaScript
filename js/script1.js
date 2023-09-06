@@ -304,7 +304,7 @@
 //     alert("Welcome 'alert'")//or alert the show modal screen
 // } else {
 //     console.log("No entry 1");
-//     alert("No entry 'alert'")//or alert the show modal screen 
+//     alert("No entry 'alert'")//or alert the show modal screen
 // }
 
 // const age = +prompt("How ald are you 1?", "");
@@ -319,7 +319,7 @@
 
 // const age = +prompt("How ald are you 1?", "");
 
-// if (age > 25) { 
+// if (age > 25) {
 //     console.log("Horror movies");
 // } else {
 //     console.log("Cartoon");
@@ -348,8 +348,6 @@
 //             default:
 //             console.log("traffic jam");
 // }
-
-
 
 // const color =prompt("") ;// red green slowly traffic jam//
 // //switch case faqat qattiy rejimda ishlaydi
@@ -394,12 +392,11 @@
 // }
 
 //Yana boshqa usuli
-//  let num = 10; 
+//  let num = 10;
 //  for (let i = 1; i < 8; i++ ){
 //         console.log(num);
 //         num++
 //     }
-
 
 //  let num = 10;
 //  for (let i = 1; i <= 10; i++ ){
@@ -417,8 +414,6 @@
 //     console.log(i);
 //  }
 
-
-
 ////////////////Homework i do/////////////////////////////
 
 // const numberOfSeries = +prompt("Nechta serial ko'rdingiz?", "");
@@ -434,9 +429,7 @@
 //     console.log("Siz serialchi zvezda ekansiz");
 // }
 
-
 // // numberOfSeries <= 5 ? console.log("Kam serial ko'ripsiz") : console.log("Siz serialchi zvezda ekansiz") ;
-
 
 // const seriesDB = {
 //     count: numberOfSeries,
@@ -463,44 +456,39 @@
 
 // /////////////////////Homewor with the teacher////////////
 
-const numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
-const seriesDB = {
-    count: numberOfSeries,
-    series: {},
-    actors: {},
-    genres: [],
-    private: false,
-};
-for (let i = 0; i < 2; i++) {
-    const a = prompt("Ohirgi ko'rgan serialingiz?"),
-        b = prompt("Nechchi baho berasiz?");
-    if (a != null && b != null && a != "" && b != "") {
-        seriesDB.series[a] = b;
-        console.log("Done");
-    } else {
-        console.log("Error");
-        i--
-    }
-}
+// const numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
+// const seriesDB = {
+//     count: numberOfSeries,
+//     series: {},
+//     actors: {},
+//     genres: [],
+//     private: false,
+// };
+// for (let i = 0; i < 2; i++) {
+//     const a = prompt("Ohirgi ko'rgan serialingiz?"),
+//         b = prompt("Nechchi baho berasiz?");
+//     if (a != null && b != null && a != "" && b != "") {
+//         seriesDB.series[a] = b;
+//         console.log("Done");
+//     } else {
+//         console.log("Error");
+//         i--
+//     }
+// }
 
-if (seriesDB.count < 5) {
-    console.log("Kam serial ko'ripsiz");
-}
- else if (seriesDB.count >= 5 && seriesDB.count < 10) {
-    console.log(" Siz klassik tomoshabin ekansiz");
-}
- else if (seriesDB.count >= 10) {
-    console.log("Siz serialchi zvezda ekansiz");
-}
-else {
-    console.log("Error");
-}
-
-console.log(seriesDB);
-
-
-
-
+// if (seriesDB.count < 5) {
+//     console.log("Kam serial ko'ripsiz");
+// }
+//  else if (seriesDB.count >= 5 && seriesDB.count < 10) {
+//     console.log(" Siz klassik tomoshabin ekansiz");
+// }
+//  else if (seriesDB.count >= 10) {
+//     console.log("Siz serialchi zvezda ekansiz");
+// }
+// else {
+//     console.log("Error");
+// }
+// console.log(seriesDB);
 
 //////////////////////////Mustaqil ish///////////////////////
 
@@ -519,3 +507,61 @@ console.log(seriesDB);
 //     default:
 //         console.log("traffic jam");
 // }
+
+//////////////////////////Funksya ES6//////////////////////
+
+// function sayHelloWorld() {
+//     console.log("HELLO WORLD");
+// }
+// sayHelloWorld()// Funcsiyani chaqirish
+
+// function sayHelloWorld(text) {
+//     console.log(text);
+// }
+// sayHelloWorld("Hello world ");
+// sayHelloWorld("Hello JavaScript ");
+// sayHelloWorld("React-Ntive ");
+
+// function calc(a, b){
+//     console.log(a + b);
+// }
+// calc(10,5);
+// calc(9,10);
+
+// function sayMyName(name, surname){
+//     console.log(`My name is ${name} ${surname}`);
+// }
+// sayMyName("Nur ","Yorov");
+
+// function sayMyName(name, surname) {
+//     let age = 30
+//     console.log(`My name is ${name} ${surname}`);
+//     console.log(age);// funksiyani ichida yaratilgan o'zgaruvchi faqat funksiyanio ichida chaqirilganda ishleydi
+// }
+// sayMyName("Nur ", "Yorov");
+
+// let age = 30
+// function sayMyName(name, surname) {
+//     let age = 20;
+//     console.log(`My name is ${name} ${surname}`);
+//     console.log(age);
+// }
+// sayMyName("Nur ", "Yorov");
+// console.log(age);
+// sayMyName("Firdavs ", "Yorov");
+// sayMyName("Doston ", "Yorov");
+// sayMyName("Farida ", "Yorova");
+
+// let age = 33;
+// function sayMyName(name, surname) {
+//     age = 10;// shu narsa qandey qilib o'zidan oldingi o'zgaruvchini qiymatinini o'zgartirganini umuman tushunmaduim??????????????????????
+//     console.log(`My name is ${name} ${surname}`);
+//     console.log(age);
+// }
+// sayMyName("Nur ", "Yorov");
+// console.log(age);
+
+function calc(a, b) {
+    return a + b; // funksiyani ichida eng ohiriga qo'yiladi huddi switchdagi breakga o'hshagan
+}
+console.log(calc(10, 5));
