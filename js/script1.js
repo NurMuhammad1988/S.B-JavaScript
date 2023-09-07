@@ -454,7 +454,7 @@
 
 // console.log(seriesDB);
 
-// /////////////////////Homewor with the teacher////////////
+// /////////////////////Homework with the teacher////////////
 
 // const numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
 // const seriesDB = {
@@ -561,7 +561,118 @@
 // sayMyName("Nur ", "Yorov");
 // console.log(age);
 
-function calc(a, b) {
-    return a + b; // funksiyani ichida eng ohiriga qo'yiladi huddi switchdagi breakga o'hshagan
+// function calc(a, b) {
+//     return a + b; // funksiyani ichida eng ohiriga qo'yiladi huddi switchdagi breakga o'hshagan
+// }
+// console.log(calc(10, 5));
+// console.log(calc(5, 9));
+
+// function calc(a, b) {
+//     return a + b;
+// }
+// const sumOFAandB =calc(10, 5);
+// console.log(sumOFAandB);
+
+//First Function Declaration// funksia elon qilingan qatordan oldin chaqirsaham ishlayveradi buham ichiga hohlagancha abject  massiv va boshqalarni qabul qiladi
+// const sumOFAandB = calc(10, 5);
+// console.log(sumOFAandB);
+// function calc(a, b) {
+//     return a + b;
+// }
+
+//Second Function Expression// faqat funksia elon qilingan qatordan keyin chaqirsa ishlaydi buham ichiga hohlagancha abject  massiv va boshqalarni qabul qiladi
+// const logger = function () {
+//     console.log("Hello world");
+// };
+// logger();
+
+//Third Arrow Function //funksiya elon qilingandan keyin funksyadan keyin returinni aftamatik tarzda korinmas qilib qoyib ketadi arrowdan keyin buham ichiga hohlagancha abject  massiv va boshqalarni qabul qiladi
+// const calc = (a, b) => a + b;
+// console.log(calc(11, 11));
+
+//////////////////////////////////////Metod va Hususiyatlar (lenght-propertysi yani hususiyati)///////////////////////////////////////////////////
+// const user = "Nur Yorov"; //lenght property: string malumotni uzunligini aniqlaydi masalan string malumotda yozilgan harflar sonini sanab beradi
+// console.log(user.length);
+
+// const arr = [1, 2, 3, 4, 5, 6];
+// console.log(arr.length);// arrey va abjectlarni ichidagi qiymatlar soninihamm aniqlab b eradi
+
+// const user = "Nur Yorov";
+// const arr = [1,2,3,4];
+// console.log(user[2]);// bu>[]qavus bilan chaqirilganda userni raqamda (2 yani r)  tanlangan harfi chiqadi
+// console.log(arr[3]);// bu>[]qavus bilan chaqirilganda arreyniham raqamda (3 yani 4)  tanlangan tanlangan chiqadi
+
+// const user = "Nur Yorov";
+// console.log(user.toLocaleUpperCase());// but metod> toLocaleUpperCase() shunday chqariladi huddi funksiya chaqirilganday va bu toLocaleUpperCase() metodi huddi css dagiday harflarni hammasini katta harf qilib beradi
+// const UpperCaseuser = user.toLocaleUpperCase();
+// console.log(user.toLowerCase());//bunisi kichkina harf qilib beradi
+// console.log(UpperCaseuser);
+
+// const greeating = "Hello world";
+// console.log(greeating.indexOf("w")); // bu metod yani indexof string bmalumotidagi so'zlar ichida w harfini bor yoqligini yoki nechchinchi raqamda qayd etilganini aniqlab beradi
+// const greeating = "Hello world";
+// console.log(greeating.indexOf("j"));// gar yoq harf  yoki malumot izlansa -1 chiqaradi bu degani false degani
+// const greeating = "Hello world";
+// console.log(greeating .slice(6, 11));// bu metod slice yani tilik bo'lak degani malumotni hohalagan bo'lagini qirqib oladi
+// console.log(greeating.slice(5));
+// console.log(greeating.slice(6));//worldni o'zini oladi
+// console.log(greeating.slice(-3));// orqadan qirqib keladi
+// console.log(greeating.substring(8, 11));// bu metodham faqat qirqib oladi faqat - ishlatib bo'lmaydi
+// console.log(greeating.substr(6,3));
+
+// const num1 = 8.8;
+// console.log(Math.round(num1));//math clobal abjecti bunda 8.8ga eng yaqin raqamni chiqarib beradi yani 9 ni
+// const num = 8.3;
+// console.log(Math.round(num));//bunda esa 8 ni chiqarib beradi chunki asosy raqamga yaqin
+
+// const borderWidth = "13.8px";
+// console.log(parseInt(borderWidth));//bu asosi raqamni o'zini chiqarrib beradi va malumotni number malumot turuga aylantirib beradi
+// console.log(parseFloat(borderWidth));// bu metof  string malumotdagi numberlarni ozini number malumot turiga aylantirib beradi
+
+////////////////////Homework Funksiya///////////////////////////
+
+let numberOfSeries;
+function startApp() {
+    numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
+
+    while (
+        numberOfSeries == "" ||
+        numberOfSeries == null ||
+        isNaN(numberOfSeries)
+    ) {
+        numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
+    }
 }
-console.log(calc(10, 5));
+startApp();
+const seriesDB = {
+    count: numberOfSeries,
+    series: {},
+    actors: {},
+    genres: [],
+    private: false,
+};
+function rememberMySeries() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt("Ohirgi ko'rgan serialingiz?"),
+            b = prompt("Nechchi baho berasiz?");
+        if (a != null && b != null && a != "" && b != "") {
+            seriesDB.series[a] = b;
+            console.log("Done");
+        } else {
+            console.log("Error");
+            i--;
+        }
+    }
+}
+rememberMySeries();
+
+if (seriesDB.count < 5) {
+    console.log("Kam serial ko'ripsiz");
+} else if (seriesDB.count >= 5 && seriesDB.count < 10) {
+    console.log(" Siz klassik tomoshabin ekansiz");
+} else if (seriesDB.count >= 10) {
+    console.log("Siz serialchi zvezda ekansiz");
+} else {
+    console.log("Error");
+}
+console.log(seriesDB);
