@@ -665,14 +665,36 @@ function rememberMySeries() {
     }
 }
 rememberMySeries();
-
-if (seriesDB.count < 5) {
-    console.log("Kam serial ko'ripsiz");
-} else if (seriesDB.count >= 5 && seriesDB.count < 10) {
-    console.log(" Siz klassik tomoshabin ekansiz");
-} else if (seriesDB.count >= 10) {
-    console.log("Siz serialchi zvezda ekansiz");
-} else {
-    console.log("Error");
+function detectLevelSeries() {
+    if (seriesDB.count < 5) {
+        console.log("Kam serial ko'ripsiz");
+    } else if (seriesDB.count >= 5 && seriesDB.count < 10) {
+        console.log(" Siz klassik tomoshabin ekansiz");
+    } else if (seriesDB.count >= 10) {
+        console.log("Siz serialchi zvezda ekansiz");
+    } else {
+        console.log("Error");
+    }
 }
-console.log(seriesDB);
+detectLevelSeries();
+function showDb(hidden) {
+    if (!hidden) {
+        console.log(seriesDB);
+    }
+}
+showDb(seriesDB.private);
+function writeGenres() {
+    for (let i = 0; i <= 2; i++) {
+        const genre = prompt(`Yahshi ko'rgan janringiz ${i + 1}`);
+        seriesDB.genres[i] = genre;
+    }
+}
+writeGenres();
+
+function writeActors() {
+    for (let i = 0; i <= 7; i++) {
+        const actors = prompt(`Yahshi ko'rgan aktiyorlaringiz  ${i + 1}`);
+        seriesDB.actors[i] = actors;
+    }
+}
+writeActors();
