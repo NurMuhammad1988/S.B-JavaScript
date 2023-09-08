@@ -790,8 +790,41 @@
 //         hair: "gray",
 //         style: "curley",
 //     },
-//     howOut: function(){
-//          console.log("Fast with help doors");
-//     }
+//     howOut: function () {
+//         console.log("Fast with help doors");
+//     },
 // };
-// theif.howOut();// bu metod qo'lda yozildi yani javascripti radnoy metodlaridan tashqari shu usulda dasturchi o'zi hohlagan nom bilan metod yaratishi mumkun
+// theif.howOut(); // bu metod qo'lda yozildi yani javascripti radnoy metodlaridan tashqari shu usulda dasturchi o'zi hohlagan nom bilan metod yaratishi mumkun
+
+// const theif = {
+//     jacket: "black",
+//     height: 1.7,
+//     colors: {
+//         hair: "gray",
+//         style: "curley",
+//     },
+//     howOut: function () {
+//         console.log("Fast with help doors");
+//     },
+// };
+// theif.howOut();
+// const { hair, style } = theif.colors;//Destruptizatsiya orqali kam qator kod yozib objectni ichidagi  malumotlarni olish mumkun
+// console.log(hair);
+// console.log(style);
+
+///////////////////////Homework//////////////////////////////
+// const theif = {/// uyga vazifani bajar
+//     jacket: "black",
+//     height: 1.7,
+//     colors: {
+//         hair: "gray",
+//         style: "curley",
+//     },
+//     howOut: function () {
+//         console.log("Fast with help doors");
+//     },
+// };
+// theif.howOut();
+// const { hair, style } = theif.colors;//Destruptizatsiya orqali kam qator kod yozib objectni ichidagi  malumotlarni olish mumkun
+// console.log(hair);
+// console.log(style);
