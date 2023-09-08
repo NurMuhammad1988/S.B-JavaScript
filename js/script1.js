@@ -631,70 +631,167 @@
 
 ////////////////////Homework Funksiya///////////////////////////
 
-let numberOfSeries;
-function startApp() {
-    numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
+// let numberOfSeries;
+// function startApp() {
+//     numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
 
-    while (
-        numberOfSeries == "" ||
-        numberOfSeries == null ||
-        isNaN(numberOfSeries)
-    ) {
-        numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
-    }
-}
-startApp();
-const seriesDB = {
-    count: numberOfSeries,
-    series: {},
-    actors: {},
-    genres: [],
-    private: false,
-};
-function rememberMySeries() {
-    for (let i = 0; i < 2; i++) {
-        const a = prompt("Ohirgi ko'rgan serialingiz?"),
-            b = prompt("Nechchi baho berasiz?");
-        if (a != null && b != null && a != "" && b != "") {
-            seriesDB.series[a] = b;
-            console.log("Done");
-        } else {
-            console.log("Error");
-            i--;
-        }
-    }
-}
-rememberMySeries();
-function detectLevelSeries() {
-    if (seriesDB.count < 5) {
-        console.log("Kam serial ko'ripsiz");
-    } else if (seriesDB.count >= 5 && seriesDB.count < 10) {
-        console.log(" Siz klassik tomoshabin ekansiz");
-    } else if (seriesDB.count >= 10) {
-        console.log("Siz serialchi zvezda ekansiz");
-    } else {
-        console.log("Error");
-    }
-}
-detectLevelSeries();
-function showDb(hidden) {
-    if (!hidden) {
-        console.log(seriesDB);
-    }
-}
-showDb(seriesDB.private);
-function writeGenres() {
-    for (let i = 0; i <= 2; i++) {
-        const genre = prompt(`Yahshi ko'rgan janringiz ${i + 1}`);
-        seriesDB.genres[i] = genre;
-    }
-}
-writeGenres();
+//     while (
+//         numberOfSeries == "" ||
+//         numberOfSeries == null ||
+//         isNaN(numberOfSeries)
+//     ) {
+//         numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
+//     }
+// }
+// startApp();
+// const seriesDB = {
+//     count: numberOfSeries,
+//     series: {},
+//     actors: {},
+//     genres: [],
+//     private: false,//agar bu truu bolsa pastdagi shu constga tegishli funksya javoblardagi malumotlarni hidden qilib qoyadi
+// };
+// function rememberMySeries() {
+//     for (let i = 0; i < 2; i++) {
+//         const a = prompt("Ohirgi ko'rgan serialingiz?"),
+//             b = prompt("Nechchi baho berasiz?");
+//         if (a != null && b != null && a != "" && b != "") {
+//             seriesDB.series[a] = b;
+//             console.log("Done");
+//         } else {
+//             console.log("Error");
+//             i--;
+//         }
+//     }
+// }
+// rememberMySeries();
+// function detectLevelSeries() {
+//     if (seriesDB.count < 5) {
+//         console.log("Kam serial ko'ripsiz");
+//     } else if (seriesDB.count >= 5 && seriesDB.count < 10) {
+//         console.log(" Siz klassik tomoshabin ekansiz");
+//     } else if (seriesDB.count >= 10) {
+//         console.log("Siz serialchi zvezda ekansiz");
+//     } else {
+//         console.log("Error");
+//     }
+// }
+// detectLevelSeries();
+// function showDb(hidden) {
+//     if (!hidden) {
+//         console.log(seriesDB);
+//     }
+// }
+// showDb(seriesDB.private);
+// function writeGenres() {
+//     for (let i = 0; i <= 2; i++) {
+//         const genre = prompt(`Yahshi ko'rgan janringiz ${i + 1}`);
+//         seriesDB.genres[i] = genre;
+//     }
+// }
+// writeGenres();
 
-function writeActors() {
-    for (let i = 0; i <= 7; i++) {
-        const actors = prompt(`Yahshi ko'rgan aktiyorlaringiz  ${i + 1}`);
-        seriesDB.actors[i] = actors;
-    }
-}
-writeActors();
+// function writeActors() {
+//     for (let i = 0; i <= 7; i++) {
+//         const actors = prompt(`Yahshi ko'rgan aktiyorlaringiz  ${i + 1}`);
+//         seriesDB.actors[i] = actors;
+//     }
+// }
+// writeActors();
+
+////////////////////////////////Callback//////////////////////
+
+// function first(cb) {
+//     //code
+//     setTimeout(() => {
+//         // bu funksiya ichidagi malumotlarni backendan kelishini kechiktirib turadi va bu yayhhsimas buni aslida caalback bilan qilinadi
+//         console.log(1);
+//         cb();
+//     }, 1000);
+// }
+
+// function second() {
+//     console.log(2);
+// }
+// first(second);
+
+// function edu (subject, callback){
+//     console.log(`I wanna teach ${subject}`);
+//     callback();
+// }
+// edu("JavaScript", function (){
+//     console.log("That's great");
+// });
+
+// function edu (subject, callback){
+//     console.log(`I wanna teach ${subject}`);
+//     callback();
+// }
+
+// function done(){
+//     console.log("That's great");
+// }
+
+// edu("JavaScript", done)// bu funksiya calback bilan q2ilingan ca;bac chaqirilmaydi oziga korsatilgan joyda ishlaydi
+
+////////////////////////Object Destruptizatsiya/////////////////
+// const theif = {
+//     jacket: "black",
+//     height: 1.7,
+//     colors: {
+//         hair: "gray",
+//         style: "curley",
+//     },
+// };
+// console.log(theif.height);
+// delete theif.jacket;// bu metod bilan abjectni ichidagi keraksi narsalarni consolga chiqmeydigan qilib udalit qils abolarkan
+// console.log(theif);
+
+// const theif = {
+//     jacket: "black",
+//     height: 1.7,
+//     colors: {
+//         hair: "gray",
+//         style: "curley",
+//     },
+// };
+// // console.log(Object.keys(theif));//bu pbjectdagi asosiy kalit sozlarni chiqarib beradi
+// console.log(Object.keys(theif).length);//bu pbjectdagi asosiy kalit so'zlarni sonini chiqarib beradi
+// for (let key in theif) {
+//     if (typeof theif[key] === "object") {
+//         for (let i in theif[key]) {
+//             console.log(`Property ${i} has value ${theif[key][i]}`);
+//         }
+//     } else {
+//         console.log(`Property ${key} has value ${theif[key]}`);
+//     }
+// } //typoff malumotni qanday turga mansub ekanligini aniqlab berishda  kerakli narsa
+
+/////////ikkinchi varyant ancha chalkash ekan
+// const theif = {
+//     jacket: "black",
+//     height: 1.7,
+//     colors: {
+//         hair: "gray",
+//         style: "curley",
+//     },
+// };
+// let count = 0;
+
+// for (let key in theif) { //arrayda for off bilan objectla  bilan esa for in qilib ishlash kerak ekan
+//     count++;
+// }
+// console.log(count);
+
+// const theif = {
+//     jacket: "black",
+//     height: 1.7,
+//     colors: {
+//         hair: "gray",
+//         style: "curley",
+//     },
+//     howOut: function(){
+//          console.log("Fast with help doors");
+//     }
+// };
+// theif.howOut();// bu metod qo'lda yozildi yani javascripti radnoy metodlaridan tashqari shu usulda dasturchi o'zi hohlagan nom bilan metod yaratishi mumkun
