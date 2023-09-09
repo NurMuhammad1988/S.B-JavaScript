@@ -740,23 +740,23 @@
 //     height: 1.7,
 //     colors: {
 //         hair: "gray",
-//         style: "curley",
+//         style: "curley",//jingalak (soch) degani
 //     },
 // };
 // console.log(theif.height);
-// delete theif.jacket;// bu metod bilan abjectni ichidagi keraksi narsalarni consolga chiqmeydigan qilib udalit qils abolarkan
+// delete theif.jacket;// bu metod bilan abjectni ichidagi keraksi narsalarni consolga chiqmeydigan qilib udalit qilsa bolarkan
 // console.log(theif);
 
 // const theif = {
 //     jacket: "black",
 //     height: 1.7,
-//     colors: {
+//     colors: {//objectni ichida object ochilgan
 //         hair: "gray",
 //         style: "curley",
 //     },
 // };
-// // console.log(Object.keys(theif));//bu pbjectdagi asosiy kalit sozlarni chiqarib beradi
-// console.log(Object.keys(theif).length);//bu pbjectdagi asosiy kalit so'zlarni sonini chiqarib beradi
+// console.log(Object.keys(theif));//bu projectdagi objectdagi asosiy kalit sozlarni chiqarib beradi
+// console.log(Object.keys(theif).length);//bu projectdagi asosiy kalit so'zlarni sonini chiqarib beradi
 // for (let key in theif) {
 //     if (typeof theif[key] === "object") {
 //         for (let i in theif[key]) {
@@ -794,7 +794,8 @@
 //         console.log("Fast with help doors");
 //     },
 // };
-// theif.howOut(); // bu metod qo'lda yozildi yani javascripti radnoy metodlaridan tashqari shu usulda dasturchi o'zi hohlagan nom bilan metod yaratishi mumkun
+// theif.howOut();
+// bu metod qo'lda yozildi yani javascripti radnoy metodlaridan tashqari shu usulda dasturchi o'zi hohlagan nom bilan metod yaratishi mumkun
 
 // const theif = {
 //     jacket: "black",
@@ -808,23 +809,90 @@
 //     },
 // };
 // theif.howOut();
-// const { hair, style } = theif.colors;//Destruptizatsiya orqali kam qator kod yozib objectni ichidagi  malumotlarni olish mumkun
+// const { hair, style } = theif.colors; //Destruptizatsiya orqali kam qator kod yozib objectni ichidagi  malumotlarni olish mumkun
 // console.log(hair);
 // console.log(style);
 
 ///////////////////////Homework//////////////////////////////
-// const theif = {/// uyga vazifani bajar
-//     jacket: "black",
+// const theif = {
+//     /// uyga vazifani bajar
+//     color: "black",
 //     height: 1.7,
+//     shoes: "soldier's boots",
 //     colors: {
 //         hair: "gray",
 //         style: "curley",
 //     },
 //     howOut: function () {
-//         console.log("Fast with help doors");
+//         console.log({ howOuthowEscape: "Fast with help doors" });
+//     },
+//     howGender: function () {
+//         console.log({ howGendercolor: "White" });
 //     },
 // };
+// console.log(theif);
 // theif.howOut();
-// const { hair, style } = theif.colors;//Destruptizatsiya orqali kam qator kod yozib objectni ichidagi  malumotlarni olish mumkun
+// theif.howGender();
+// const { hair, style } = theif.colors;
+// const{shoes} = theif;
+// //Destruptizatsiya orqali kam qator kod yozib objectni ichidagi  malumotlarni olish mumkun
 // console.log(hair);
 // console.log(style);
+// console.log(shoes);
+
+//////////////////Massivlar va psedamassiv//////////////////////
+// const arr = [1,2,3,4,5,6];
+// arr.pop();// bu metod arrayni ohirgi qiymatini olib tashlaydi bu number bolsaham
+// console.log(arr);
+
+// const ass = ["bir", "ikki", "uch"];
+// ass.pop();// bu metod arrayni ohirgi qiymatini olib tashlaydi bu string bo'lsaham
+// console.log(ass);
+
+// const arr = [1, 2, 3, 4, 5, 6];
+// arr.pop();
+// arr.push(7);//bu metod arrayni ohirgi qiymatiga yangi qiymat qoshadi bu number bolsaham
+// console.log(arr);
+
+// const rrr = ["bir", "ikki", "uch"];
+// rrr.pop();
+// rrr.push("uch ,");//bu metod arrayni ohirgi qiymatiga yangi qiymat qoshadi bu string bolsaham
+// console.log(rrr);
+
+// const arr = [1,2,3,4,5,6];
+// arr.push("salom");//bu metod arrayni ohirgi number qiymatiga yangi qiymat qoshadi bu string bolsaham
+// console.log(arr);
+
+// const arr = [2, 3, 4, 5];
+// for (let i = 0; i < arr.length; i++) {
+//      console.log(arr[i]);
+// }
+
+// const arr = [2, 3, 4, 5];
+// for (let value of arr) {// for of faqat arraylar bilan ishlaydi for in es afaqat objectlar bilan ishlaydi
+//     console.log(value);
+// }
+
+// const arr = [2, 3, 4, 5];
+// console.log(arr.length);// lenght massiv va objectlardagi malumotlarni yani 0 chi indexdan boshlanadigan malumotlarni sanab ohiriga 1 ni qo'shib umumiy yig'indini hissoblab chiqarib beradi yani massiv va objectlar  0 dan boshlangani uchun misol: bu o'zgaruvchi ichidagi massivni uzunligini yani sanog'ini 0 dan hissoblaganda 3 chiqadi lenght bo'lsa shu 0 ni hissobini  ohiriga 1 ni qo'shib hissoblab 4 qilib chiqarib beradi masalan 2,3,4,5  shunda to'g'ri ishlagan hissoblanadi
+
+// const arr = [2, 3, 4, 5];
+// arr.forEach(function (item, index, arr) {
+//     //forEachni afzal tarafi forEach callback bilan har safar har bir element uchun to'liq ishlaydi yani
+//     //forEach doim 3 ta parameter qabul qiladi (1 chi parametr qiymat  2 chi parametr index 3 chi parametr bu shu forEach uchun ochilgan o'zgaruvchini yani massivni o'zini nomi)
+//     console.log(`${index}: ${item} into arr ${arr}`);
+
+//     // Bu run codeda chiqgan javobi yani 1 chisi index 2 chisi element yani item raqami 3 chisi esa logda arr yani massivni boshdan ohir qaytarib beradi
+//     // 0: 2 into arr 2,3,4,5
+//     // 1: 3 into arr 2,3,4,5
+//     // 2: 4 into arr 2,3,4,5
+//     // 3: 5 into arr 2,3,4,5
+// });
+
+// const movies = prompt("What is your favorite movies", "");
+// const userMovies = movies.split(", ")// bu split metodi shunday yozilganda promptdan qaytadigan javobni massiv yani shuni [shuni] ichiga olib tartibli tarzda dona dona qilib qaytarib beradi yani string malumot turini massiv malumot turiga o'girib beradi
+// console.log(userMovies);
+
+// const movies = prompt("What is your favorite movies", "");
+// const userMovies = movies.split(", ");
+// console.log(userMovies.join("- "));
