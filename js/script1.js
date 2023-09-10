@@ -893,6 +893,98 @@
 // const userMovies = movies.split(", ")// bu split metodi shunday yozilganda promptdan qaytadigan javobni massiv yani shuni [shuni] ichiga olib tartibli tarzda dona dona qilib qaytarib beradi yani string malumot turini massiv malumot turiga o'girib beradi
 // console.log(userMovies);
 
-// const movies = prompt("What is your favorite movies", "");
-// const userMovies = movies.split(", ");
-// console.log(userMovies.join("- "));
+// const movies = prompt("What's your favorite movies", "");
+// const userMovies = movies.split(", ");//har bir metodni o'zini vazifasi bor
+// userMovies.sort();//har bir metodni o'zini vazifasi bor
+// console.log(userMovies.join("- "));//har bir metodni o'zini vazifasi bor
+
+// const arr = [65, 27, 2, 79, 13, 14, 25, 16, 8];
+// arr.sort(compareFn);// bu metod 0 dan boshlab indexlarni tartib bilan bajaradi tepadagi misol => 2,8,13,14,16,25,2 7,65,79
+// console.log(arr);
+// function compareFn(a, b) {
+//     return a - b;
+// }
+
+// const arr = [65, 27, 79, 13, 14, 25, 16, 8];
+// arr.sort((a, b) => a - b);
+// console.log(arr);
+
+////////////////////////Clonlash ES6///////////////////////////
+
+// let x = 10;
+// let y = x;
+// y = y + 5;
+// console.log(x); // javobi 10 bu oddiy o'zgaruvchining qiymati 10
+// console.log(y); // javobi 15 bu murakkabroq holat: x o'zgaruvchi 10 ga teng y o'zgaruvchi x ga yani x ni qiymati 10 ga teng y ga yani 10 ga 5 qo'shilganda 15 chiqadi
+
+// let isMarried = false;
+// let isArray = isMarried;
+// isArray = true;
+// console.log(isMarried);
+// console.log(isArray);
+
+// const number = {
+//     x: 10,
+//     y: 5,
+// };
+// const newNumber = number; // tepadagi number nomnli o'zgaruvchini havolasini yani idsini yangi o'zgaruvchiga berib o'zgartirish
+// newNumber.x = 15;
+// console.log(number);
+// console.log(newNumber);
+
+// function nusxaObj(obj) {
+//     let objNusxa = {};
+//     for (let key in obj) {
+//         objNusxa[key] = obj[key];
+//     }
+//     return objNusxa;
+// }
+// const numbers = {
+//     x: 10,
+//     y: 5,
+//     z: {
+//         a: 1,
+//         b: 2,
+//     },
+// };
+// const newNumbers = nusxaObj(numbers);
+// newNumbers.x = 15;
+// newNumbers.z.a = 10;
+// console.log(newNumbers);
+// console.log(numbers);
+
+// const numbers = {
+//     x: 10,
+//     y: 5,
+//     z: {
+//         a: 1,
+//         b: 2,
+//     },
+// };
+// const newNumbers = Object.assign({}, numbers);
+// newNumbers.x = 15;
+// console.log(newNumbers);
+// console.log(numbers);
+
+
+// const numbers = {
+//     x: 10,
+//     y: 5,
+// };
+// const addNumber ={
+//     z:15,
+// }
+// const allNumbers = Object.assign(numbers, addNumber);
+// console.log(allNumbers);
+
+// const arr = [1,2,3];
+// const numbers = arr.slice();
+// numbers[1] = 'Nur'
+// console.log(arr);
+// console.log(numbers);
+
+//spread usuli massivni birlashtirish
+// const liverpool = ['Salah', 'Mane'];
+// const manCity = ['Mahrez'];
+// const mixPlayer = [...liverpool, ...manCity];
+// console.log(mixPlayer);
