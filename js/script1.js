@@ -912,7 +912,7 @@
 ////////////////////////Clonlash ES6///////////////////////////
 
 // let x = 10;
-// let y = x;
+// let y = x;//bu y o'zgaruvchida x o'zgaruvchidagi qiymat yashingan yani chaqirilgan yanaham to'g'ririg'i x ni nusxasi chaqirilgan
 // y = y + 5;
 // console.log(x); // javobi 10 bu oddiy o'zgaruvchining qiymati 10
 // console.log(y); // javobi 15 bu murakkabroq holat: x o'zgaruvchi 10 ga teng y o'zgaruvchi x ga yani x ni qiymati 10 ga teng y ga yani 10 ga 5 qo'shilganda 15 chiqadi
@@ -923,16 +923,17 @@
 // console.log(isMarried);
 // console.log(isArray);
 
-// const number = {
+// const number = {// funcsiyani clonlash nusxa bo'lmadi faqat idsi havolasi berib qo'yildi bu NUSXALASH EMAS!!!
 //     x: 10,
 //     y: 5,
 // };
-// const newNumber = number; // tepadagi number nomnli o'zgaruvchini havolasini yani idsini yangi o'zgaruvchiga berib o'zgartirish
+// const newNumber = number; // tepadagi number nomli o'zgaruvchini havolasini yani idsini yangi o'zgaruvchiga berib o'zgartirish bu holatda ikkala o'zgaruvchiniham qiymati 15 ga teng bo'lib qoladi yani: number o'zgaruvchini x qiymati 10 ga teng yangi newNumber o'zgaruvchini qiymati number o'zgaruvchiga teng yani 10 ga shunda newNumber o'zgaruvchini x qiymatini 15 ga teng qilinsa number o'zgaruvchiniham javobi 15 new number o'zgaruvchiniham javobi 15
 // newNumber.x = 15;
 // console.log(number);
 // console.log(newNumber);
 
-// function nusxaObj(obj) {
+function nusxaObj(obj) {
+    // bu yerdagi ish ancha qiyin yani:nusxaObj nomli objectli funksiya ochilgan va bu funksiyani parametiriga obj deb nom yani qo'shimcha id berilgan keyin esa bu nusxaObjni ichiga yani bo'sh objectga asoslangan o'zgaruvchi ochilgan (objNusxa) keyin for sikli yordamida objectni intiratsa yani qo'shvoldi for sikilini ichiga yangi bo'sh holatda ochilgan objNusxa o'zgaruvchisi chaqirilgan massiv yani array orqali objNusxa ni keylari array ichida chaqirilgan va obj yani massiv yani array ichida nusxaObj ning keylari bilan teng qilingan
 //     let objNusxa = {};
 //     for (let key in obj) {
 //         objNusxa[key] = obj[key];
@@ -940,18 +941,20 @@
 //     return objNusxa;
 // }
 // const numbers = {
-//     x: 10,
+//     x: 10, //funksiyani ichiudagi hususiyatlar//objektni birinchi qatori
 //     y: 5,
 //     z: {
-//         a: 1,
+//         a: 1, //funksiyani ichkima ichki hususiyatlari//objectni ikinchi qatori
 //         b: 2,
 //     },
 // };
 // const newNumbers = nusxaObj(numbers);
 // newNumbers.x = 15;
-// newNumbers.z.a = 10;
-// console.log(newNumbers);
+// // newNumbers.y = 25;
+// newNumbers.z.a = 11;
+// newNumbers.z.b = 11;
 // console.log(numbers);
+// console.log(newNumbers);  // bu yerdagi ish ancha qiyin yani:nusxaObj nomli objectli funksiya ochilgan va bu funksiyani parametiriga obj deb nom yani qo'shimcha id berilgan keyin esa bu nusxaObjni ichiga yani bo'sh objectga asoslangan o'zgaruvchi ochilgan (objNusxa) keyin for sikli yordamida objectni intiratsa yani qo'shvoldi for sikilini ichiga yangi bo'sh holatda ochilgan objNusxa o'zgaruvchisi chaqirilgan massiv yani array orqali objNusxa ni keylari array ichida chaqirilgan va obj yani massiv yani array ichida nusxaObj ning keylari bilan teng qilingan keyin numbers nomli o'zgaruvchi yaratilib unga qiymatlar berilgan keyin yana newNumbers nomli o'zgaruvchi yaratilib nusxaObjga teng qilingan va parametiriga numbers o'zgaruvchi kirg;izib qo'yilgan va newNumbersi x qiymati 15 qili o'zgartirilgan qolganlariham huddi shu yo'sinda davom etgan bu holatda abjectimiz copiya boladi va ikiinchi holatini o'zgartiribham cipy qilib olish mumkun
 
 // const numbers = {
 //     x: 10,
@@ -959,13 +962,12 @@
 //     z: {
 //         a: 1,
 //         b: 2,
-//     },
+//     }, 
 // };
 // const newNumbers = Object.assign({}, numbers);
-// newNumbers.x = 15;
+// // newNumbers.x = 15;
 // console.log(newNumbers);
-// console.log(numbers);
-
+// // console.log(numbers);
 
 // const numbers = {
 //     x: 10,
