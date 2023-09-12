@@ -932,8 +932,8 @@
 // console.log(number);
 // console.log(newNumber);
 
-function nusxaObj(obj) {
-    // bu yerdagi ish ancha qiyin yani:nusxaObj nomli objectli funksiya ochilgan va bu funksiyani parametiriga obj deb nom yani qo'shimcha id berilgan keyin esa bu nusxaObjni ichiga yani bo'sh objectga asoslangan o'zgaruvchi ochilgan (objNusxa) keyin for sikli yordamida objectni intiratsa yani qo'shvoldi for sikilini ichiga yangi bo'sh holatda ochilgan objNusxa o'zgaruvchisi chaqirilgan massiv yani array orqali objNusxa ni keylari array ichida chaqirilgan va obj yani massiv yani array ichida nusxaObj ning keylari bilan teng qilingan
+// function nusxaObj(obj) {
+//     // bu yerdagi ish ancha qiyin yani:nusxaObj nomli objectli funksiya ochilgan va bu funksiyani parametiriga obj deb nom yani qo'shimcha id berilgan keyin esa bu nusxaObjni ichiga yani bo'sh objectga asoslangan o'zgaruvchi ochilgan (objNusxa) keyin for sikli yordamida objectni intiratsa yani qo'shvoldi for sikilini ichiga yangi bo'sh holatda ochilgan objNusxa o'zgaruvchisi chaqirilgan massiv yani array orqali objNusxa ni keylari array ichida chaqirilgan va obj yani massiv yani array ichida nusxaObj ning keylari bilan teng qilingan
 //     let objNusxa = {};
 //     for (let key in obj) {
 //         objNusxa[key] = obj[key];
@@ -952,9 +952,9 @@ function nusxaObj(obj) {
 // newNumbers.x = 15;
 // // newNumbers.y = 25;
 // newNumbers.z.a = 11;
-// newNumbers.z.b = 11;
+// newNumbers.z.b = 13;
 // console.log(numbers);
-// console.log(newNumbers);  // bu yerdagi ish ancha qiyin yani:nusxaObj nomli objectli funksiya ochilgan va bu funksiyani parametiriga obj deb nom yani qo'shimcha id berilgan keyin esa bu nusxaObjni ichiga yani bo'sh objectga asoslangan o'zgaruvchi ochilgan (objNusxa) keyin for sikli yordamida objectni intiratsa yani qo'shvoldi for sikilini ichiga yangi bo'sh holatda ochilgan objNusxa o'zgaruvchisi chaqirilgan massiv yani array orqali objNusxa ni keylari array ichida chaqirilgan va obj yani massiv yani array ichida nusxaObj ning keylari bilan teng qilingan keyin numbers nomli o'zgaruvchi yaratilib unga qiymatlar berilgan keyin yana newNumbers nomli o'zgaruvchi yaratilib nusxaObjga teng qilingan va parametiriga numbers o'zgaruvchi kirg;izib qo'yilgan va newNumbersi x qiymati 15 qili o'zgartirilgan qolganlariham huddi shu yo'sinda davom etgan bu holatda abjectimiz copiya boladi va ikiinchi holatini o'zgartiribham cipy qilib olish mumkun
+// console.log(newNumbers);  // bu yerdagi ish ancha qiyin yani:nusxaObj nomli objectli funksiya ochilgan va bu funksiyani parametiriga obj deb nom yani qo'shimcha id berilgan keyin esa bu nusxaObjni ichiga yani bo'sh objectga asoslangan o'zgaruvchi ochilgan (objNusxa) keyin for sikli yordamida objectni intiratsa yani qo'shvoldi for sikilini ichiga yangi bo'sh holatda ochilgan objNusxa o'zgaruvchisi chaqirilgan massiv yani array orqali objNusxa ni keylari array ichida chaqirilgan va obj yani massiv yani array ichida nusxaObj ning keylari bilan teng qilingan keyin numbers nomli o'zgaruvchi yaratilib unga qiymatlar berilgan keyin yana newNumbers nomli o'zgaruvchi yaratilib nusxaObjga teng qilingan va parametiriga numbers o'zgaruvchi kirg'izib qo'yilgan va newNumbersi x qiymati 15 qilib o'zgartirilgan qolganlariham huddi shu yo'sinda davom etgan bu holatda abjectimiz copiya boladi va ikiinchi holatini o'zgartiribham copy qilib olish mumkun
 
 // const numbers = {
 //     x: 10,
@@ -962,12 +962,12 @@ function nusxaObj(obj) {
 //     z: {
 //         a: 1,
 //         b: 2,
-//     }, 
+//     },
 // };
-// const newNumbers = Object.assign({}, numbers);
-// // newNumbers.x = 15;
-// console.log(newNumbers);
-// // console.log(numbers);
+// const newNumbers = Object.assign({}, numbers);//bu metod numbersni ichidagi qiymatlarrni olib o'zgartirib va nusxalab berayapti yani ikkita object bo'lib qoldi assign metodi oldoga {} bo'sh object qo'yilsa manbani shu bo'sh objectga solib chiqarib beradi
+// newNumbers.x = 15;
+// console.log(newNumbers);//numbers o'zgaruvchidagi qiymatlarni newNumbers o;zgaruvchiga olib qo'yildi
+// console.log(numbers);// ikkita har hil object paydo bo'ldi ikkinchi objectdan nusxa olinayotganda qiymatiham o'zgartirildi
 
 // const numbers = {
 //     x: 10,
@@ -976,17 +976,104 @@ function nusxaObj(obj) {
 // const addNumber ={
 //     z:15,
 // }
-// const allNumbers = Object.assign(numbers, addNumber);
+// const allNumbers = Object.assign(numbers, addNumber);//bu metod ikkala objectni birlashtirib beradi (numbers+addNumber //orasida aslida + bor)
 // console.log(allNumbers);
 
 // const arr = [1,2,3];
-// const numbers = arr.slice();
+// const numbers = arr.slice();//bu metod arrayni copya qilish uchun ishlatiladi
 // numbers[1] = 'Nur'
 // console.log(arr);
 // console.log(numbers);
 
-//spread usuli massivni birlashtirish
-// const liverpool = ['Salah', 'Mane'];
+// const liverpool = ['Salah', 'Mane'];//
+// // spread usuli massivni birlashtirish
 // const manCity = ['Mahrez'];
-// const mixPlayer = [...liverpool, ...manCity];
+// const mixPlayer = [...liverpool, ...manCity];//ucta nuqta ...spread operatori hissoblanadi va bu massivlarni (arraylarni) bir biriga qo'shib beradi [...liverpool, ...manCity// aslida verguldan keyin pilus bor]
 // console.log(mixPlayer);
+
+////////////////////////Spread operator///////////////////////
+
+// function logger(x, y, z) {
+//     console.log(x + y + z);
+// }
+
+// logger(1, 2, 3); //(x=1) (y=2) (z=3) 1+2=3 3+3=6 javobi 6 lekin bu ishlash hoto
+
+// const calc = [1, 2, 3];
+// function logger(x, y, z) {
+//     console.log(x + y + z);
+// }
+// logger(...calc);
+
+// const arr = ["x", "y"];
+// const newArr = [arr]
+// console.log(arr);
+
+// const numbers = {
+//     x: 10,
+//     y: 5,
+// };
+// const newNumbers = { ...numbers };//spread operator nusxalash
+// console.log(numbers);
+// console.log(newNumbers);
+
+/////////////////////OOP Asoslari////////////////////////////
+//Shu mavzuni qayta qayta takrorlash
+
+// const firstName = "Nur";
+// const str = new String(firstName);
+// console.log(firstName);
+// console.log(str);
+
+// const firstName = "Nur";
+// const str = new String(firstName);
+// console.log(typeof firstName);
+// console.log(typeof str);
+
+// const car = {//Bu eski yo'li
+//     motor: "X",
+//     color: "red",
+//     isAirbag: true,
+//     isSpead:function(){
+//          console.log(320);
+//     }
+// };
+// const gm = {
+//     isAirbag: false,
+// };
+// // console.log(car);// this is exam!!!
+// gm.__proto__ = car;
+// console.log(gm.color);
+// gm.isSpead()
+
+// const car = {// bu yangi birinchi yo'li
+//     motor: "X",
+//     color: "red",
+//     isAirbag: true,
+//     isSpead: function () {
+//         console.log(320);
+//     },
+// };
+// const gm = {
+//     isAirbag: false,
+// };
+
+// Object.setPrototypeOf(gm, car);
+
+// console.log(gm);
+
+
+// const car = {
+//     motor: "X",
+//     color: "red",
+//     isAirbag: true,
+//     isSpead: function () {
+//         console.log(320);
+//     },
+// };
+// const gm = {
+//     isAirbag: false,
+// };
+
+// const bmw = Object.create(car,)
+// console.log(bmw);
