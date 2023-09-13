@@ -455,7 +455,6 @@
 // console.log(seriesDB);
 
 // /////////////////////Homework with the teacher////////////
-
 // const numberOfSeries = +prompt("Nechta serial ko'rdingiz", "");
 // const seriesDB = {
 //     count: numberOfSeries,
@@ -1062,7 +1061,6 @@
 
 // console.log(gm);
 
-
 // const car = {
 //     motor: "X",
 //     color: "red",
@@ -1077,3 +1075,82 @@
 
 // const bmw = Object.create(car,)
 // console.log(bmw);
+
+// /////////////////////Homework ////////////////////////////
+const seriesDB = {
+    count: 0,
+    series: {},
+    genres: [],
+    actors: {},
+    private: false, 
+    start: function () {
+        seriesDB.count = +prompt("Nechta serial ko'rdingiz", "");
+        while (
+            seriesDB.count == "" ||
+            seriesDB.count == null ||
+            isNaN(seriesDB.count)
+        ) {
+            seriesDB.count = +prompt("Nechta serial ko'rdingiz", "");
+        }
+    },
+    rememberMySeries: function () {
+        for (let i = 0; i < 2; i++) {
+            const a = prompt("Ohirgi ko'rgan serialingiz?"),
+                b = prompt("Nechchi baho berasiz?");
+            if (a != null && b != null && a != "" && b != "") {
+                seriesDB.series[a] = b;
+                console.log("Done");
+            } else {
+                console.log("Error");
+                i--;
+            }
+        }
+    },
+    detectLevelSeries: function () {
+        if (seriesDB.count < 5) {
+            console.log("Kam serial ko'ripsiz");
+        } else if (seriesDB.count >= 5 && seriesDB.count < 10) {
+            console.log(" Siz klassik tomoshabin ekansiz");
+        } else if (seriesDB.count >= 10) {
+            console.log("Siz serialchi zvezda ekansiz");
+        } else {
+            console.log("Error");
+        }
+    },
+    showDb: function () {
+        if (!seriesDB.private) {
+            console.log(seriesDB);
+        }
+    },
+    visibleDB: function () {
+        if (seriesDB.private) {
+            seriesDB.private = false;
+        } else {
+            seriesDB.private = true;
+        }
+    },
+    writeGenres: function () {
+        let genres = prompt(
+            "Yahshi ko'rgan janringizni vergul yordamida yozing"
+        ).toLowerCase();
+        console.log(genres); //propmtdan kelayotgan narsani asl holatini ko'rish uchun
+        if (genres === "" || genres === null) {
+            console.log("Siz noto'g'ri malumot kiritdingiz");
+            i--;
+        } else {
+            seriesDB.genres = genres.split(", ");
+            seriesDB.genres.sort();
+        }
+        seriesDB.genres.forEach(function (item, idx) {
+            console.log(`Yahshi ko'rgan janringiz ${idx + 1} - nomi ${item}`);
+        });
+    },
+    writeActors: function () {
+        for (let i = 0; i <= 7; i++) {
+            const actors = prompt(`Yahshi ko'rgan aktiyorlaringiz  ${i + 1}`);
+            seriesDB.actors[i] = actors;
+        }
+    },
+};
+
+// console.log(seriesDB);//buni ishlat
