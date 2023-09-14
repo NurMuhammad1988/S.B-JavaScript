@@ -1082,7 +1082,7 @@
 //     series: {},
 //     genres: [],
 //     actors: {},
-//     private: false, 
+//     private: false,
 //     start: function () {
 //         seriesDB.count = +prompt("Nechta serial ko'rdingiz", "");
 //         while (
@@ -1123,6 +1123,7 @@
 //         }
 //     },
 //     visibleDB: function () {
+//         //shunga umuman tushunmadim takrorlashda jiddiy qara
 //         if (seriesDB.private) {
 //             seriesDB.private = false;
 //         } else {
@@ -1133,7 +1134,7 @@
 //         let genres = prompt(
 //             "Yahshi ko'rgan janringizni vergul yordamida yozing"
 //         ).toLowerCase();
-//         console.log(genres); //propmtdan kelayotgan narsani asl holatini ko'rish uchun
+//         // console.log(genres); //propmtdan kelayotgan narsani asl holatini ko'rish uchun
 //         if (genres === "" || genres === null) {
 //             console.log("Siz noto'g'ri malumot kiritdingiz");
 //             i--;
@@ -1152,5 +1153,34 @@
 //         }
 //     },
 // };
+// //// console.log(typeof seriesDB);//buni ishlat bu katta objec
 
-// console.log(seriesDB);//buni ishlat
+///////////////Dynamic typing///////////////////////////////
+// malumot trularini bir biriga o'zgartirish
+// to string sonlardan qanday qilib matn malumot turiga o'tiladi
+// console.log(typeof String(4))//1 chi yo'li
+// console.log(typeof ("Nur " + 21));//2 chi yo'li
+// const youtubeChannel = 10;
+// console.log(`youtube.com/channel/` + youtubeChannel);
+//to number matnlardan qanday qilib raqamlar chiqarish
+// console.log(typeof Number(4));//1 chi usuli
+// console.log(typeof + "5");//2 chi usuli
+// console.log(typeof parseInt("15")); // 3 chi usuli
+// const nameOne = parseInt(prompt("age"));
+// console.log(nameOne);
+
+//to booline
+// //0, "", null, undefined, NaN, = har doim false qaytaradi
+// let age = 0; // o'zgaruvchini qiymati 0 ga teng bolsa console hech narsa qaytarmaydi
+// if (age) {
+//     console.log("g");
+// }
+// age = 18;//yani ozgaruvchini qiymati 18 ga o'zgartirilgandan keyin consolega malumot chiqdi
+// if (age) {
+//     console.log("g");
+// }
+
+// console.log(typeof Boolean("4"));// 2 chi usuli
+// console.log(typeof !!"4");//3 chi usuli
+
+////////////////////////DOM bilan ishlash///////////////////////
