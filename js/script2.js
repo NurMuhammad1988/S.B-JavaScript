@@ -1,6 +1,7 @@
 "use strict";
 
 ////////////////////By myself/////////////////////////
+//////////////DOM va Metodlar bilan ishlash//////////
 
 // // Old version codes
 // const box = document.getElementById('#box');// id orqali olish
@@ -107,7 +108,6 @@
 // circles[1].replaceWith(myCircle); //before 0 no o'rniga yani qatorni boshiga qaytaradi
 // myCircle.style.backgroundColor = "gray";
 
-
 // const circleWrapper = document.querySelector('.circle__wrapper')
 // const circles = document.querySelectorAll(".circle");
 // const myCircle = document.createElement("div");
@@ -116,18 +116,13 @@
 // myCircle.innerHTML = 'E'
 // // myCircle.innerHTML = '<pre>E</pre>'//INNER HTMLNI ICHIGA HTML TAGLARNIHAM YOZISH MUMKUN
 // myCircle.style.backgroundColor = "blue";
-// // circles[0].after(myCircle);//Buni qavus ichiga olib turaman ekran lfavit bo'yicha turishi uchun 
+// // circles[0].after(myCircle);//Buni qavus ichiga olib turaman ekran lfavit bo'yicha turishi uchun
 // // myCircle.textContent = 'A'// BU ORQALIHAM FAQAT TEXTLAR YOZISH MUMKUN// bu faqat text qaytaradi html taglar qaytarmaydi
-
 
 // circleWrapper.insertAdjacentHTML("afterbegin", "<pre>e</pre>");//ichini boshoga kiradi
 // circleWrapper.insertAdjacentHTML("beforebegin", "<pre>e</pre>");//tashqarisini boshiga kiradi
 // circleWrapper.insertAdjacentHTML("afterend", "<pre>e</pre>");//ohiriga qo'shib beradi
 // circleWrapper.insertAdjacentHTML("beforeend", "<pre>e</pre>");//ichini ohiriga qo'shib beradi
-
-
-
-
 
 ////////////////////with the teacher/////////////////////////
 
