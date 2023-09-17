@@ -37,12 +37,73 @@
 // };
 // btn.addEventListener("click", deleteElement);//bunda deleteElement o'zgaruvchiga button elementini remove holati chaqirilgan btn.addEventListener da onclick bo'lganda deleteElemente kelib ichidagi elementni udalit qiladi
 
-let i = 0;
-const addElement = (event) => {
-    i++;
-    if (i === 3) {
-        btn.removeEventListener("click", addElement);
+// let i = 0;
+// const addElement = (event) => {
+//     i++;
+//     if (i === 3) {
+//         btn.removeEventListener("click", addElement);
+//     }
+//     console.log(i);
+// };
+// btn.addEventListener("click", addElement);
+
+// const overlay = document.querySelector(".overlay");
+// const cb = (e) => {
+//     console.log(e.currentTarget);
+// };
+// btn.addEventListener("click", cb);
+// overlay.addEventListener("click", cb);
+
+//  const link = document.querySelector('a')
+//  link.addEventListener('click', (event) =>{
+// event.preventDefault()
+// alert("link")
+//  })
+
+// const btns = document.querySelectorAll("button");
+// btns.forEach((item) => {
+//     item.addEventListener("click", () => {
+//         console.log(1);
+//     });
+// });
+
+// const btns = document.querySelectorAll("button");
+// const logger = () => {
+//     console.log(1);
+// };
+// btns.forEach((item) => {
+//     item.addEventListener("click", logger, {once:true});
+// });
+
+/////////////////DOM navigatsya/////////////////////
+
+// console.log(document.head);
+// console.log(document.body);
+// console.log(document.body.childNodes);
+// console.log(document.body.firstChild);
+// console.log(document.body.lastChild);
+// console.log(document.querySelector('#btn' ).parentNode);
+// console.log(document.querySelector('#btn' ).parentNode.parentNode);
+////////////////////////////
+{
+    /* <button data-current="">B</button> */
+}
+// console.log(document.querySelector('[data-current="b"]').nextSibling);//next oradagi bo'sh kataklardan yani probellardan keyingi qatorlarniham hissoblash kerak shunda keyingi button chiqarkan
+
+// console.log(document.querySelector('[data-current="b"]').previousSibling);//bundaham shu previos bilan bo'sh qatorlar hissoblansa oldingi qatorlarga chiqadi
+
+// console.log(document.querySelector('[data-current="b"]').nextElementSibling);// bunga bo'sh probel tashlash sharmas bu faqat bor elementni o'zini bilan ishlaydi
+
+// console.log(document.querySelector('[data-current="b"]').previousElementSibling);// bunga bo'sh probel tashlash sharmas bu faqat bor elementni o'zini bilan ishlaydi
+
+// console.log(document.querySelector('#btn' ).parentElement);//buham o'zidan oldingi elementni ko'rsatadi
+
+// console.log(document.body.firstElementChild);
+// console.log(document.body.lastElementChild);
+
+for (let node of document.body.childNodes) {// bunda nodelar orasidagi probellar sabab #text bo'lib chiqadigan textlar yo'qolib faqat elementlarni o'zi chiqadi
+    if (node.nodeName == "#text") {
+        continue;
     }
-    console.log(i);
-};
-btn.addEventListener("click", addElement);
+    console.log(node);
+}

@@ -6,8 +6,8 @@
 
 button {
     display: block;
-    margin: 10px auto;
-    padding: 10px 30px;
+    margin:  auto;
+    padding: 10px  30px;
     outline: none;
     width: 300px;
     background-color: aquamarine;
@@ -24,7 +24,9 @@ button:hover {
 }
 
 .overlay {
-    width: 100px;
-    padding: 30px;
+    width: 100%;
+    height: 200px;
     background-color: burlywood;
+    padding-top: 30px;
+    
 }
