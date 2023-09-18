@@ -4,17 +4,18 @@
 //////////////DOM va Metodlar bilan ishlash//////////
 
 // // Old version codes
-// const box = document.getElementById('#box');// id orqali olish
+// const box = document.getElementById('box');// id orqali olish
 // console.log(box);
 
 // const buttons = document.getElementsByTagName("button")[0];//bu har doim massiv qaytaradi >[1]< manashu kodsiz bu faqat elementni o'zini qataradi bu >[1]< kod bilan esa elementlarni ichidan kerakli elementni 0 dan boshlanadigan raqam orqali  tanlab oladi massivni ichiga to'g'ridan to'g'ri elementni olib bo'lmaydi
 // console.log(buttons);
 
-// const circles = document.getElementsByClassName("circle")
-// console.log(circles);
+// const circles = document.getElementsByClassName("circle")[2]
+// console.log(circles);// 3 chi divdagi circle chaqiriladi
 // // Old version codes
 
 // //New version codes
+
 // const heart = document.querySelector(".heart");//bitta heart nomli classni qaytaradi
 // console.log(heart);
 
@@ -29,6 +30,7 @@
 
 // const hearts = wrapper.querySelectorAll(".heart");
 // console.log(hearts);
+
 // //New version codes
 
 ///////////////Project preparation///////////////////////////

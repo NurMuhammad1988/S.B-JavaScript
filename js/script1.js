@@ -1159,7 +1159,7 @@
 // malumot trularini bir biriga o'zgartirish
 // to string sonlardan qanday qilib matn malumot turiga o'tiladi
 // console.log(typeof String(4))//1 chi yo'li
-// console.log(typeof ("Nur " + 21));//2 chi yo'li
+// console.log(typeof ("Nur " + 35));//2 chi yo'li
 // const youtubeChannel = 10;
 // console.log(`youtube.com/channel/` + youtubeChannel);
 //to number matnlardan qanday qilib raqamlar chiqarish
@@ -1170,7 +1170,7 @@
 // console.log(nameOne);
 
 //to booline
-// //0, "", null, undefined, NaN, = har doim false qaytaradi
+//0, "", null, undefined, NaN, = har doim false qaytaradi
 // let age = 0; // o'zgaruvchini qiymati 0 ga teng bolsa console hech narsa qaytarmaydi
 // if (age) {
 //     console.log("g");
@@ -1181,6 +1181,7 @@
 // }
 
 // console.log(typeof Boolean("4"));// 2 chi usuli
+
 // console.log(typeof !!"4");//3 chi usuli
 
 ////////////////////////DOM bilan ishlash script2.js faylida///////////////////////
