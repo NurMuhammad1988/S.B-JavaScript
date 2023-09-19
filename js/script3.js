@@ -13,23 +13,28 @@
 //     alert("click from js2");
 // };
 
-// ONCLICK 3 chi usuli shu usuldan foydalanish kerak bunda bitta onclickga ikkita habar yozilsaham novbati bilan hammasini chiqaradi
+//ONCLICK 3 chi usuli shu usuldan foydalanish kerak bunda bitta onclickga ikkita habar yozilsaham novbati bilan hammasini chiqaradi
 // btn.addEventListener("click", () => {
-//     alert("click");
+//     alert("click1");
 // });
 // btn.addEventListener("click", () => {
 //     alert("click2");
 // });
 
-// btn.addEventListener("mouseenter", () => {//bu buttonga mouse borganda hover bo'lib madalda Hover degan yozuvimiz chiqadi yanai madalni hover desaham boladi lekin bu nimadur vazifa bajarishi mumkun
+////////////////////////////////////////////////////////////////
+// let play = function () {// bu darsdan tashqari TAJRIBA!!
+//     document.getElementById("audio").play();
+// };
+////////////////////////////////////////////////////////////////
+
+// btn.addEventListener("mouseenter", () => {//bu buttonga mouse borganda hover bo'lib madalda Hover degan yozuvimiz chiqadi yani madalni hover desaham boladi lekin bu nimadur vazifa bajarishi mumkun
 //     alert("Hover");
 // });
 
-// btn.addEventListener("mouseenter", (event) => {//bu buttonga mouse borganda hover bo'lib madalda Hover degan yozuvimiz chiqadi yanai madalni hover desaham boladi lekin bu nimadur vazifa bajarishi mumkun
-//     // console.log(event.target);//event target yordamida esa bu yozilgan buttonni elementini yani htmldagi elementini logda olish mumkun yani har safar btnga murojat qilmasdan event orqali elementni olish
+// btn.addEventListener("mouseenter", (event) => {//bu buttonga mouse borganda hover bo'lib madalda Hover degan yozuvimiz chiqadi yani madalni hover desaham boladi lekin bu nimadur vazifa bajarishi mumkun
+//     console.log(event.target);//event target yordamida esa bu yozilgan buttonni elementini yani htmldagi elementini logda olish mumkun yani har safar btnga murojat qilmasdan event orqali elementni olish
 //     // event.target.remove();//onchlik bo'lganda buttonni ekrandan udalit qilish hodisasi bo'ladi
-
-//     // alert("Hover");
+//     alert("Hover");
 // });
 
 // const deleteElement = (event) => {
@@ -37,14 +42,19 @@
 // };
 // btn.addEventListener("click", deleteElement);//bunda deleteElement o'zgaruvchiga button elementini remove holati chaqirilgan btn.addEventListener da onclick bo'lganda deleteElemente kelib ichidagi elementni udalit qiladi
 
+// const deleteElement = (event) => {
+//     event.target.remove();
+// };
+// btn.addEventListener("mouseenter", deleteElement);//bunda deleteElement o'zgaruvchiga button elementini remove holati chaqirilgan btn.addEventListener da mouse borganda deleteElemente kelib ichidagi elementni udalit qiladi
+
 // let i = 0;
 // const addElement = (event) => {
 //     i++;
-//     if (i === 3) {
+//     if (i === 3 ) {
 //         btn.removeEventListener("click", addElement);
 //     }
 //     console.log(i);
-// };
+// };// bu yerda  sikl orqali 3 martta onclik bo'lgandan keyin to'htaydi
 // btn.addEventListener("click", addElement);
 
 // const overlay = document.querySelector(".overlay");
@@ -54,12 +64,12 @@
 // btn.addEventListener("click", cb);
 // overlay.addEventListener("click", cb);
 
-//  const link = document.querySelector('a')
-//  link.addEventListener('click', (event) =>{
-// event.preventDefault()
-// alert("link")
-//  })
-
+// const link = document.querySelector("a");
+// link.addEventListener("click", (event) => {
+//     event.preventDefault();
+//     alert("link");
+// });
+ 
 // const btns = document.querySelectorAll("button");
 // btns.forEach((item) => {
 //     item.addEventListener("click", () => {
@@ -78,16 +88,19 @@
 /////////////////DOM navigatsya/////////////////////
 
 // console.log(document.head);
+// console.log(innerWidth);
 // console.log(document.body);
 // console.log(document.body.childNodes);
 // console.log(document.body.firstChild);
 // console.log(document.body.lastChild);
-// console.log(document.querySelector('#btn' ).parentNode);
-// console.log(document.querySelector('#btn' ).parentNode.parentNode);
+// console.log(document.querySelector('#btn' ).parentNode);//o'zino ona elementini chaqiradi
+// console.log(document.querySelector('#btn' ).parentNode.parentNode);// bunda esa btnni ona dividan tashqaridagi ona divni chaqiradi yani man yozgan  html bo'yicha bodyni chaqiradi
 ////////////////////////////
-{
+
     /* <button data-current="">B</button> */
-}
+
+// console.log(document.querySelector('[data-current="b"]'));
+
 // console.log(document.querySelector('[data-current="b"]').nextSibling);//next oradagi bo'sh kataklardan yani probellardan keyingi qatorlarniham hissoblash kerak shunda keyingi button chiqarkan
 
 // console.log(document.querySelector('[data-current="b"]').previousSibling);//bundaham shu previos bilan bo'sh qatorlar hissoblansa oldingi qatorlarga chiqadi
@@ -101,7 +114,7 @@
 // console.log(document.body.firstElementChild);
 // console.log(document.body.lastElementChild);
 
-for (let node of document.body.childNodes) {// bunda nodelar orasidagi probellar sabab #text bo'lib chiqadigan textlar yo'qolib faqat elementlarni o'zi chiqadi
+for (let node of document.body.childNodes) {// bunda nodelar orasidagi probellar sabab #text bo'lib chiqadigan textlar yo'qolib faqat elementlarni o'zi chiqadi yani tozza ghtml kodlarni chiqaradi
     if (node.nodeName == "#text") {
         continue;
     }

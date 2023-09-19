@@ -41,13 +41,13 @@
 // box.style.width = "100px"; //diynamic tarzda styleda rangi va size o'zgartirildi
 
 // const buttons = document.querySelectorAll("button");
-// buttons[0].style.width = "100px";//buttonga ko'plik holatda shundan dymamic style beriladi CHUNKI BU MASSIV >[] Manashu massivga chaqirmasdan style berib bo'meydi
+// buttons[0].style.width = "200px";//buttonga ko'plik holatda shundan dymamic style beriladi CHUNKI BU MASSIV >[] Manashu massivga chaqirmasdan style berib bo'meydi
 
 // const circles = document.querySelectorAll(".circle");
-// circles[1].style.backgroundColor = "yellow";//buham huddi tepadagi holat html fayillar bu joyda massivni ichida keladi querySelectorALL MASSIV QILIB HAMMA SHU NOMLI KLASLARNI OLIB KELADI CHUNKI ALL BO'LGANI UCHUN shu sabab yani massiv noldan boshlangani sabab kerakli elementgan 0 dan boshlab massivni ichiga olib class berish mumkun querySelectorAll bodydagi hamma elementlarni massivini oladi
+// circles[1].style.backgroundColor = "yellow";//buham huddi tepadagi holat html fayillar bu joyda massivni ichida keladi querySelectorALL MASSIV QILIB HAMMA SHU NOMLI KLASLARNI OLIB KELADI CHUNKI ALL BO'LGANI UCHUN shu sabab yani massiv noldan boshlangani sabab kerakli elementga 0 dan boshlab massivni ichiga olib class berish mumkun querySelectorAll bodydagi hamma elementlarni massivini oladi
 
 // const circle = document.querySelector(".circle");
-// circle.style.backgroundColor ="yellow";// querySelector ni o'zi bo'lsa (yani All siz) bodydagi circle nomli claslarni birinchisini olib keladi
+// circle.style.backgroundColor ="yellow";// querySelector ni o'zi bo'lsa (yani All siz) bodydagi circle nomli claslarni birinchisini olib keladi faqat birinchisini olib keladi
 
 // const box = document.querySelector("#box");
 // box.style.cssText = "background-color: green; width: 200px; border-radius:20px;";//va hokozooo qilib stylelarni berish mumkun// bu htmldan kelayotgan elementlarga js ichida dynamic style berishni eng yahshi yo'li yani bir qator kod ichida hamma stylelarni berish mumkun
@@ -58,19 +58,26 @@
 // } //[i] qilingani uchun hammasi o'zgardi lekin []< buni ichiga 0 dan boshlab 2 gacha hohlagan raqam yozilganda yurakchalarga tanlab style bersa bo'ladi
 
 // const hearts = document.querySelectorAll(".heart");
+// for (let i = 0; i < hearts.length; i++) {
+//     hearts[2].style.backgroundColor = "green";
+// } //[i] qilingani uchun hammasi o'zgardi lekin []< buni ichiga 0 dan boshlab 2 gacha hohlagan raqam yozilganda yurakchalarga tanlab style bersa bo'ladi
+
+// const hearts = document.querySelectorAll(".heart");
 // hearts.forEach((item) => {
 //     item.style.backgroundColor = 'yellow'
-// });// bu forEach orqali qilingani shuni yangi va qulay usuli yani hamma elementlarga bittada dynamic style berish
+// });// bu forEach orqali qilingani shuni yangi va qulay usuli yani hamma elementlarga bittada dynamic style berish yoki ichidan tanlab hohlaganimizga dynamic style berish item deganda ichida yani heartsni ichidagi hamma elementlar nazarda tutilayapti
 
-//  const btn = document.createElement("button");//createElement bilan yangi html elementni dynamic tarzda js ichida yaratish mumkun
+//  const btn = document.createElement("button");//createElement bilan yangi html elementni dynamic tarzda js ichida yaratish mumkun bunda divniham dynamic tarzda yaratish
 //  document.body.append(btn);
-// //  const text = document.createTextNode("i am a text");
-// //  console.log(text);// be html bodyga dynamic tarzda text qo'shish
+
+//  const text = document.createTextNode("i am a text");
+//  console.log(text);// bu html bodyga dynamic tarzda text qo'shish
+
 
 // const circleWrapper = document.querySelector('.circle__wrapper')
 // const myCircle = document.createElement("div");
 // myCircle.classList.add('circle');//classList.add() < bu htmldagi classListlarimzga classni dynamic tarzda qo'shadi
-// circleWrapper.append(myCircle);// bu yerda 1 chi qatordagi circleWrapper o'zgaruvchisi orqali htmldagi circle__wrapper (yani ona div)classi chaqirildi va keyingi qatorda myCircle nomli yangi o'zgaruvchi ochilib unga createElement metod yozilib shu metod orqali htmla yangi div ochildi va myCircle o'zgaruvchisiga classList.add orqali yangi div (circle) qo'shildi append() metodi orqali qo'shildi
+// circleWrapper.append(myCircle);// bu yerda 1 chi qatordagi circleWrapper o'zgaruvchisi orqali htmldagi circle__wrapper (yani ona div)classi chaqirildi va keyingi qatorda myCircle nomli yangi o'zgaruvchi ochilib unga createElement metod yozilib shu metod orqali htmlda yangi div ochildi va myCircle o'zgaruvchisiga (classList.add bu clasni nomicircle bo'lishi uchun javobgar hususiyat) orqali yangi div (circle) qo'shildi append() metodi orqali qo'shildi 
 
 // const circleWrapper = document.querySelector('.circle__wrapper')
 // const myCircle = document.createElement("div");
@@ -118,10 +125,10 @@
 // myCircle.innerHTML = 'E'
 // // myCircle.innerHTML = '<pre>E</pre>'//INNER HTMLNI ICHIGA HTML TAGLARNIHAM YOZISH MUMKUN
 // myCircle.style.backgroundColor = "blue";
-// // circles[0].after(myCircle);//Buni qavus ichiga olib turaman ekran lfavit bo'yicha turishi uchun
+// // circles[0].after(myCircle);//Buni qavus ichiga olib turaman ekran alfavit bo'yicha turishi uchun
 // // myCircle.textContent = 'A'// BU ORQALIHAM FAQAT TEXTLAR YOZISH MUMKUN// bu faqat text qaytaradi html taglar qaytarmaydi
 
-// circleWrapper.insertAdjacentHTML("afterbegin", "<pre>e</pre>");//ichini boshoga kiradi
+// circleWrapper.insertAdjacentHTML("afterbegin", "<pre>e</pre>");//ichini boshiga kiradi
 // circleWrapper.insertAdjacentHTML("beforebegin", "<pre>e</pre>");//tashqarisini boshiga kiradi
 // circleWrapper.insertAdjacentHTML("afterend", "<pre>e</pre>");//ohiriga qo'shib beradi
 // circleWrapper.insertAdjacentHTML("beforeend", "<pre>e</pre>");//ichini ohiriga qo'shib beradi
