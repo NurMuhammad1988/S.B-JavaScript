@@ -3,7 +3,7 @@
 ////////////////////By myself/////////////////////////
 //////////////DOM va Metodlar bilan ishlash//////////
 
-// // Old version codes
+// Old version codes
 // const box = document.getElementById('box');// id orqali olish
 // console.log(box);
 

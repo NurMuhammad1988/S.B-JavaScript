@@ -1186,4 +1186,42 @@
 
 ////////////////////////DOM bilan ishlash script2.js faylida///////////////////////
 ////////////////////////DOM bilan ishlash script2.js faylida///////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////Async defer. Dynamic scriptlar/////////////
+
+//SHU NARSANI TUSHUNMADIM QAYTADAN BAJAR
+// const p = document.querySelectorAll("p");
+// console.log(p);
+
+// function loadScript(src) {
+//     const script = document.createElement("script");
+//     script.src = src;
+//     script.async = false;//bunda orqama keyin qanday qo'yilgan bo'lsa shunday turadi hajimga qarab tanlanmaydi
+//     document.body.append(script); // bu yerda asyng atributi aftamatik qo'shiladi
+// }
+// loadScript("js/script2.js");
+// loadScript("js/script3.js");
+
+//////////////////DEVELOPER TOOLS HATOLARNI KUZATISH/////////////
+
+function sayHello() {//Debugger consoldagi sourcesni ichidagi devtools
+    console.log("Good morning");
+    // debugger // shu qaysudur funksiyaga qo'yilsa devtoolsga kirgandan shuni tayyorlab chiqarib turgan bo'ladi yani oldindan kerakli funksiyani tanlab debuggerni ishlatsa bo'ladi
+}
+sayHello();
+
+function sayBye() {
+    console.log("Good bye");
+}
+sayBye();
+
+const arr = [1, 34, 14, -56, 98],
+    sorted = arr.sort(compareNum);
+    //  debugger // shu qaysudur funksiyaga qo'yilsa devtoolsga kirgandan shuni tayyorlab chiqarib turgan bo'ladi yani oldindan kerakli funksiyani tanlab debuggerni ishlatsa bo'ladi
+
+function compareNum(a, b) {
+    return a - b;
+    
+}
+console.log(sorted);
