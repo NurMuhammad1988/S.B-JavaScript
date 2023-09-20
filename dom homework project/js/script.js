@@ -1,9 +1,9 @@
 "use strict",
-    // document.addEventListener("DOMContentLoaded", () =>// YANI BU KOD FOYDALANUVCHI BARAWSERDAN SHU SAHIFAGA KIRGANDA BIRINCHI BOLIB HTML BACKENT YOKI CSS KODLARNI MEDIYA FAILLARNI OCHIB BERADI UNDAN KEYIN ESA JS KODLARINI ELEMENTLARNI DOMGA ALOQADOR JOYLARINI HARAKATALARNI HODISALARNI BOSHLAYDI YANI HALI SAHIFA TO'LIQ YUKLAMASDAN (MASALAN INTERNET TEZLIGI PAST HOLATDA) MEDIYA FAYILLAR TO'LIQ YUKLANMASDAN JS KODLARINI ISHLATMAY TURADICHUNKU MEDIYA FAYILLAR OCHILMASDAN JS CODLAR ISHLASHA QOTIB QOLISH YOKI YOQ RASMGA SLIDERLAR ISHLASHNI BOSHLAB YUBORISHU MUMKUN
+    // document.addEventListener("DOMContentLoaded", () =>// YANI BU KOD FOYDALANUVCHI BARAWSERDAN SHU SAHIFAGA KIRGANDA BIRINCHI BOLIB HTML BACKENT YOKI CSS KODLARNI MEDIYA FAILLARNI OCHIB BERADI UNDAN KEYIN ESA JS KODLARINI ELEMENTLARNI DOMGA ALOQADOR JOYLARINI HARAKATALARNI HODISALARNI BOSHLAYDI YANI HALI SAHIFA TO'LIQ YUKLAMASDAN (MASALAN INTERNET TEZLIGI PAST HOLATDA) MEDIYA FAYILLAR TO'LIQ YUKLANMASDAN JS KODLARINI ISHLATMAY TURADI CHUNKU MEDIYA FAYILLAR OCHILMASDAN JS CODLAR ISHLASHA QOTIB QOLISH YOKI YOQ RASMGA SLIDERLAR ISHLASHNI BOSHLAB YUBORISHU MUMKUN
 
     document.addEventListener("DOMContentLoaded", () => {
         /////////////////////////////////////////////////////
-        // WARNINGG !!!!(use scriptniham ohiri har hil holatda tursin)boshidagi o'zgaruvchilarni ohiri faqt vergul bilan yopilgan chunki bu kodlar boshqa vc codeda yozilayotganda nastroyka o'zgartirilgan bu faylni radnoy joyidan to'g'ridan to'g'ri skachat qilib olganim uchun osha nastroyka ishlayapti  WARNING: ohilari ; bo'lsa kodlar ishlamay qoladi
+        // WARNINGG !!!!(use scriptniham ohiri har hil holatda tursin)boshidagi o'zgaruvchilarni ohiri faqat vergul bilan yopilgan chunki bu kodlar boshqa vc codeda yozilayotganda nastroyka o'zgartirilgan bu faylni radnoy joyidan to'g'ridan to'g'ri skachat qilib olganim uchun osha nastroyka ishlayapti  WARNING: ohilari ; bo'lsa kodlar ishlamay qoladi
         //////////////////////////////////////////////////////
 
         const adv = document.querySelectorAll(".promo__adv img"), // bu htmlda reklamalari bor promo__adv ona divi buni ichidagi img degan taglar chaqirildi maqsad >> adv.forEach((item) => {     item.remove();}); forEach metodi va remov metodi orqali dynamic tarzda saytda o'chirsh edi
@@ -25,9 +25,9 @@
             arr.sort();
         };
 
-        imdId.style.cssText = "color:white;";
+        imdId.style.cssText = "color:green;";
 
-        imdClass.style.cssText = "color:white;";
+        imdClass.style.cssText = "color:yellow;";
 
         // console.log(seriesList.innerHTML);//bu bilan o'zgaruvchida chaqirilgan html divni to'liq olish mumkun
 
@@ -67,12 +67,21 @@
         };
 
         function createSeriesList(series, parent) {
-            seriesList.innerHTML = ""; // seriesList  <<bu htmlda ul da  promo__interactive-list nomli class va buni ichida bir nechta text formatli fayillar bor  seriesList.innerHTML = ""; yani shu innerhtml chaqirilganda "" manashu kod borligi sabab promo__interactive-list nomli html clas ichidagi text fayillar dynamic tarzda udalit bo'ladi (browserdan) yani "" bo'sh string bo'lib qoladi lekin html faylda turaveradi udalit bo'lmasdan
+            seriesList.innerHTML = "";
+            sortArr(series); // seriesList  <<bu htmlda ul da  promo__interactive-list nomli class va buni ichida bir nechta text formatli fayillar bor  seriesList.innerHTML = ""; yani shu innerhtml chaqirilganda "" manashu kod borligi sabab promo__interactive-list nomli html clas ichidagi text fayillar dynamic tarzda udalit bo'ladi (browserdan) yani "" bo'sh string bo'lib qoladi lekin html faylda turaveradi udalit bo'lmasdan
             series.forEach((item, idx) => {
                 parent.innerHTML += `
         <li class="promo__interactive-item">${idx + 1} ${item}
-           <div class="delete"></div>
+           <div class="delete"></div>   
          </li>`;
+            });
+
+            document.querySelectorAll(".delete").forEach((trash, idx) => {
+                trash.addEventListener("click", () => {
+                    trash.parentElement.remove();
+                    seriesDB.series.splice(idx, 1);
+                    createSeriesList(series, parent);
+                });
             });
         }
 
@@ -81,49 +90,6 @@
         makeChanges();
         createSeriesList(seriesDB.series, seriesList);
     });
-
-
-21 chi mimutda qoldim
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //         seriesDB.series.forEach((item, idx) => {

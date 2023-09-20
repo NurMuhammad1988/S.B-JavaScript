@@ -1,0 +1,58 @@
+/* *{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    background-color: darkslategrey;
+}
+
+.headhache{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    padding-top: 20px;
+}
+.headhache h1{
+color: crimson;
+font-size: 50px;
+font-weight: 900;
+margin-bottom: 50px;
+} */
+
+/* ///////////////////////////////// by teacher /////////////////////////////////////////////////*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    }
+    
+    html,
+    body {
+    height: 100%;
+    }
+    
+    body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #dff0f6;
+    }
+    
+    button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    color: #fff;
+    background: #034d85;
+    padding: 1.1rem 3.4rem;
+    border-radius: .2rem;
+    transition: opacity .2s;
+    }
+    
+    button:hover {
+    cursor: pointer;
+    background: #053056;
+    }
