@@ -2,15 +2,6 @@
 ///////////////////////////Claslist_2////////////////////////////
 /////by myself//////////////////////////////////////////////////
 
-// const btns  = document.querySelectorAll('button')
-// console.log(btns[0].classList.length);//bu bilan btns o'zgaruvchisini ichidagi buttonlarning birinchisini nechta classi borligini bilib beradi
-
-// const btns  = document.querySelectorAll('button')
-// console.log(btns[0].classList.item(1));//bu bilan btns o'zgaruvchisini ichidagi buttonlarnini classlarini tanlab  bilib beradi  elementlarni chiqarib beradi
-
-
-const btns  = document.querySelectorAll('button')
-btns[1].classList.add('violet')//bunda buttonlarni 2 chisiga dynamic tarzda blue degan yangi class qo'shildi bu yuangi class cssda yozib qo'yilgan 
 
 
 
@@ -21,6 +12,21 @@ btns[1].classList.add('violet')//bunda buttonlarni 2 chisiga dynamic tarzda blue
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////withe the teacher///////////////////////////////////////
 // const wrapper = document.querySelector(".btn-block"),
 //     btns = document.querySelectorAll("button");
