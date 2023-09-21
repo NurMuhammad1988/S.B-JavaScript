@@ -1184,9 +1184,9 @@
 
 // console.log(typeof !!"4");//3 chi usuli
 
-////////////////////////DOM bilan ishlash script2.js faylida///////////////////////
-////////////////////////DOM bilan ishlash script2.js faylida///////////////////////
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////DOM bilan ishlash script2.js ////////////faylida///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////Hodislar bilan ishlash script3.js ///////faylida///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////////////////Async defer. Dynamic scriptlar/////////////
 
@@ -1205,23 +1205,25 @@
 
 //////////////////DEVELOPER TOOLS HATOLARNI KUZATISH/////////////
 
-function sayHello() {//Debugger consoldagi sourcesni ichidagi devtools
-    console.log("Good morning");
-    // debugger // shu qaysudur funksiyaga qo'yilsa devtoolsga kirgandan shuni tayyorlab chiqarib turgan bo'ladi yani oldindan kerakli funksiyani tanlab debuggerni ishlatsa bo'ladi
-}
-sayHello();
+// function sayHello() {//Debugger consoldagi sourcesni ichidagi devtools
+//     console.log("Good morning");
+//     // debugger // shu qaysudur funksiyaga qo'yilsa devtoolsga kirgandan shuni tayyorlab chiqarib turgan bo'ladi yani oldindan kerakli funksiyani tanlab debuggerni ishlatsa bo'ladi
+// }
+// sayHello();
 
-function sayBye() {
-    console.log("Good bye");
-}
-sayBye();
+// function sayBye() {
+//     console.log("Good bye");
+// }
+// sayBye();
 
-const arr = [1, 34, 14, -56, 98],
-    sorted = arr.sort(compareNum);
-    //  debugger // shu qaysudur funksiyaga qo'yilsa devtoolsga kirgandan shuni tayyorlab chiqarib turgan bo'ladi yani oldindan kerakli funksiyani tanlab debuggerni ishlatsa bo'ladi
+// const arr = [1, 34, 14, -56, 98],
+//     sorted = arr.sort(compareNum);
+//     //  debugger // shu qaysudur funksiyaga qo'yilsa devtoolsga kirgandan shuni tayyorlab chiqarib turgan bo'ladi yani oldindan kerakli funksiyani tanlab debuggerni ishlatsa bo'ladi
 
-function compareNum(a, b) {
-    return a - b;
-    
-}
-console.log(sorted);
+// function compareNum(a, b) {
+//     return a - b;
+
+// }
+// console.log(sorted);
+
+///////////////////////ClassList (yani hodislar bilashni davomi) bilan ishlash script4 failida///////////////////////////////////////////////////////////////////////////////////////////////////////////////

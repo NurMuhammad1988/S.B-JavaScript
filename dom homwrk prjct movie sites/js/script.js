@@ -1,11 +1,10 @@
 "use strict",
-    // document.addEventListener("DOMContentLoaded", () =>// YANI BU KOD FOYDALANUVCHI BARAWSERDAN SHU SAHIFAGA KIRGANDA BIRINCHI BOLIB HTML BACKENT YOKI CSS KODLARNI MEDIYA FAILLARNI OCHIB BERADI UNDAN KEYIN ESA JS KODLARINI ELEMENTLARNI DOMGA ALOQADOR JOYLARINI HARAKATALARNI HODISALARNI BOSHLAYDI YANI HALI SAHIFA TO'LIQ YUKLAMASDAN (MASALAN INTERNET TEZLIGI PAST HOLATDA) MEDIYA FAYILLAR TO'LIQ YUKLANMASDAN JS KODLARINI ISHLATMAY TURADI CHUNKU MEDIYA FAYILLAR OCHILMASDAN JS CODLAR ISHLASHA QOTIB QOLISH YOKI YOQ RASMGA SLIDERLAR ISHLASHNI BOSHLAB YUBORISHU MUMKUN
+    /////////////////////////////////////////////////////
+    // WARNINGG !!!!(use scriptniham ohiri har hil holatda tursin)boshidagi o'zgaruvchilarni ohiri faqat vergul bilan yopilgan chunki bu kodlar boshqa vc codeda yozilayotganda nastroyka o'zgartirilgan bu faylni radnoy joyidan to'g'ridan to'g'ri skachat qilib olganim uchun osha nastroyka ishlayapti  WARNING: ohilari ; bo'lsa kodlar ishlamay qoladi
+    //////////////////////////////////////////////////////
 
     document.addEventListener("DOMContentLoaded", () => {
-        /////////////////////////////////////////////////////
-        // WARNINGG !!!!(use scriptniham ohiri har hil holatda tursin)boshidagi o'zgaruvchilarni ohiri faqat vergul bilan yopilgan chunki bu kodlar boshqa vc codeda yozilayotganda nastroyka o'zgartirilgan bu faylni radnoy joyidan to'g'ridan to'g'ri skachat qilib olganim uchun osha nastroyka ishlayapti  WARNING: ohilari ; bo'lsa kodlar ishlamay qoladi
-        //////////////////////////////////////////////////////
-
+        // document.addEventListener("DOMContentLoaded", () =>// YANI BU KOD FOYDALANUVCHI BARAWSERDAN SHU SAHIFAGA KIRGANDA BIRINCHI BOLIB HTML BACKENT YOKI CSS KODLARNI MEDIYA FAILLARNI OCHIB BERADI UNDAN KEYIN ESA JS KODLARINI ELEMENTLARNI DOMGA ALOQADOR JOYLARINI HARAKATALARNI HODISALARNI BOSHLAYDI YANI HALI SAHIFA TO'LIQ YUKLAMASDAN (MASALAN INTERNET TEZLIGI PAST HOLATDA) MEDIYA FAYILLAR TO'LIQ YUKLANMASDAN JS KODLARINI ISHLATMAY TURADI CHUNKU MEDIYA FAYILLAR OCHILMASDAN JS CODLAR ISHLASHA QOTIB QOLISH YOKI YOQ RASMGA SLIDERLAR ISHLASHNI BOSHLAB YUBORISHU MUMKUN
         const adv = document.querySelectorAll(".promo__adv img"), // bu htmlda reklamalari bor promo__adv ona divi buni ichidagi img degan taglar chaqirildi maqsad >> adv.forEach((item) => {     item.remove();}); forEach metodi va remov metodi orqali dynamic tarzda saytda o'chirsh edi
             wrapper = document.querySelector(".promo__bg"), //bu htmlda promo__bg degan class bunga cssda backgrounga rasim berilgan wrapper degan o'zgaruvchi ochib bu divni classi orqali chaqirib manabu >>wrapper.style.backgroundImage = 'url("img/1.jpg")'; usulda background rasim o'zgartirildi bunday holatda rasim o'zgartirilganda rasim papkadan manabunday // (yani css va htmlda chaqirilganday papkalar ga kirib borib tanlanmaydi) holatda chaqirilmaydi hammasi manzillar qo'lda url bilan yoziladi>>
             imdId = document.querySelector("#imd"), //buni id orqali qilindi
@@ -42,26 +41,28 @@
         };
 
         addForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-            let newSeries = inputVal.value;
+            event.preventDefault();// addForm nomli o'zgaruvchi yaratilib unga htmldan foemni add clasi chaqirilib addEventListener metodi bilan parametrda submit chaqirilib event.preventDefault bilan qayta yuklanishga barham berildi
+            let newSeries = inputVal.value;// bu inputni ichidagi qiymatnin oladi
             const favourite = checkbox.checked;
 
-            if (newSeries) {
+            if (newSeries) {//const o'zgaruvchi qaytadan o'zgarmagani uchun bu joyda let o'zgaruvchsi yozildi
+
+                // if faqat true qabul qiladi shu uchun false bo'lganda  nima bo'lishi kereyligini yana boshqa if yoki else  bilan bildirib qo'yish kerak
                 if (newSeries.length > 18) {
                     newSeries = `${newSeries.substring(0, 18)}...`;
-                }
+                }// bu joyda agar newSeries (yani inputdan keladigan malumot) lenghti (!uzunligi) 18 ta harifdan ko'p bo'lsa interpalatsa orqali newSeries chaqirilib umga substring() nomli metod chaqirilib parametriga nechtadan boshlab nechtada tugashini aytib qo'yish kerak substring metodi ohirida 3 ta nuqta bilan yani interpalatsadan avval ishlaydi
                 if (favourite) {
                     console.log("Sevimli serialingiz qo'shildi");
-                }
+                }// bu yerda agarda favoriute o'zgaruvchiga keladigan malumot true bolsa yani inputni ichiga narsa yozilsa logda nima chiqishi aytilgan
                 seriesDB.series.push(newSeries);
-                sortArr(seriesDB.series);
+                sortArr(seriesDB.series);// bu  seriesDB o'zgaruvchisining ichidagi seies arrayini alphabet bo'yicha yozib qo'yildi
                 createSeriesList(seriesDB.series, seriesList);
             }
-            event.target.reset();
+            event.target.reset();// bu formani yozib bo;lingandan keyin tozalab tashaydi sahifani qayta yuklamasdan
         });
 
         const deleteAdv = (arr) => {
-            adv.forEach((item) => {
+            adv.forEach((item) => {    
                 item.remove();
             });
         };
@@ -78,8 +79,8 @@
 
             document.querySelectorAll(".delete").forEach((trash, idx) => {
                 trash.addEventListener("click", () => {
-                    trash.parentElement.remove();
-                    seriesDB.series.splice(idx, 1);
+                    trash.parentElement.remove();// bu yerda delete divlari chaqirilib forEach metodi yordamida  parametriga trash va indexlar berilib  trash onclik bo'lganda addEventListener trashni yani delite divini  remove metodi yordamida ona divini udalit qilvoradi yani li ni
+                    seriesDB.series.splice(idx, 1);// index bo'yicha splice ko'rsatilgan index raqamni seriesDB seriesga kelib tushgan malumotlarni udalit qilib tashleydi
                     createSeriesList(series, parent);
                 });
             });
@@ -90,7 +91,6 @@
         makeChanges();
         createSeriesList(seriesDB.series, seriesList);
     });
-
 
 //         seriesDB.series.forEach((item, idx) => {
 //             //  ()<parametrdagi item elementlar degani yani ichidagi narsalar idx esa indexlar yani 0 dan boshlanadigan raqamlari
