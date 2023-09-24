@@ -1228,9 +1228,9 @@
 
 ///////////////////////ClassList (yani hodislar bilashni davomi) bilan ishlash script4 failida///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//////////////////////Delegatsa hodisalari dcarsi 4 script4 failida//////////////////////
+//////////////////////Delegatsa hodisalari darsi 4 script4 failida//////////////////////
 
-// ////////////////////////Date bilan ishlash (Eslatma: Date bu sana Dta esa malumot turi Js da shunday)///////////////////////////
+// ////////////////////////Date bilan ishlash (Eslatma: Date bu sana Daa esa malumot turi Js da shunday)///////////////////////////
 // const now = new Date()// bu bilan kun soatni bilsa bo'ladi yani Datadi!!!// GMT+0500<=bu O'zbekiston vat birligi jahon bo'yicha
 // console.log(now);//logda yahshiroq ko'rinarkan!!! yani turgan joyni waqr birligi bilan ko'rsatib beriladi
   
