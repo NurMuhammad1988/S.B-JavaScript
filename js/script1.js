@@ -1233,7 +1233,7 @@
 // ////////////////////////Date bilan ishlash (Eslatma: Date bu sana Daa esa malumot turi Js da shunday)///////////////////////////
 // const now = new Date()// bu bilan kun soatni bilsa bo'ladi yani Datadi!!!// GMT+0500<=bu O'zbekiston vat birligi jahon bo'yicha
 // console.log(now);//logda yahshiroq ko'rinarkan!!! yani turgan joyni waqr birligi bilan ko'rsatib beriladi
-  
+
 ////////////////////////data bilan ishlash///////////////////////////
 // const now = new Date('2022-05-29')//bu holatda yani datadni ihtiyoriy yozilganda log shu kunni 00 lini chiqarib beradi
 // console.log(now);
@@ -1242,10 +1242,10 @@
 // console.log(now);
 
 // const now = new Date()
-// console.log(now.getFullYear());//bunda faqat yilni malumotlarini oladi  
+// console.log(now.getFullYear());//bunda faqat yilni malumotlarini oladi
 
 // const now = new Date()
-// console.log(now.getMonth());//bunda qaysi oy ekanligini number+string bilan birga beradi 8 chi oy oktyabir lekin bugun 24 chi sentyabir 09 chi oy 23 chi yil bu aslida 7 chi oyni ko'rsatishi kerak edi lekin dasturlashda hammma narsa 0 dan boshlanadi masalan yanvarham noldan boshlanadi yani oylar noldan boshlanadi  
+// console.log(now.getMonth());//bunda qaysi oy ekanligini number+string bilan birga beradi 8 chi oy oktyabir lekin bugun 24 chi sentyabir 09 chi oy 23 chi yil bu aslida 7 chi oyni ko'rsatishi kerak edi lekin dasturlashda hammma narsa 0 dan boshlanadi masalan yanvarham noldan boshlanadi yani oylar noldan boshlanadi
 
 // const now = new Date()
 // console.log(now.getDate());// lekin kunni to'g'ri ko'rsatdi yani birdan boshlab hissobladi
@@ -1255,12 +1255,12 @@
 
 // const now = new Date()
 // console.log(now.getTime());//1695582189519 shunaqa choqdi yani millisikundda hissoblaydi
- 
+
 // const now = new Date()
 // console.log(now.getHours());//bunda soatni boshini ko'rsatadi
 
 // const now = new Date()
-// console.log(now.getUTCHours());//MINTAQA BO'YICHA VAQTNI BOSHINI ANIQLAB BERADI 
+// console.log(now.getUTCHours());//MINTAQA BO'YICHA VAQTNI BOSHINI ANIQLAB BERADI
 
 // const now = new Date()//
 // console.log(now.setHours(18));//bu dasturchi hohlab qo'ygan vaqt yani hammasini setdatani setmonthni setyearsni hullas hammasini hsunday qilib o'zgartirish mumkun
@@ -1270,7 +1270,49 @@
 // for(let i = 0; i < 200000; i++){
 //     let some = i ** 3
 // }
-// let end = new Date() 
+// let end = new Date()
 // console.log(start.getTime());
 // console.log(end.getTime());
 // alert(`Loop compited in  ${end - start} millisecond`)
+/////////////////////////Window doc bilan ishlash//////////////////
+
+//   const box = document.querySelector('.box')
+//   const width = box.clientWidth
+//   const height = box.clientHeight
+//   console.log(width);
+//   console.log(height);
+
+//   const box = document.querySelector('.box')
+//   const width = box.offsetWidth
+//   const height = box.offsetHeight
+//   console.log(width);
+//   console.log(height);
+
+// const box = document.querySelector(".box");
+// const height = box.scrollHeight
+// console.log(height);
+
+// const box = document.querySelector(".box"),
+// btn =document.querySelector('button')
+// btn.addEventListener('click' , () =>{
+//     box.style.height= box.scrollHeight + 'px'//scrolni click bilan butunlay ochildi
+// })
+
+// const box = document.querySelector(".box"),
+// btn =document.querySelector('button')
+// btn.addEventListener('click' , () =>{
+//     console.log(box.scrollTop);
+// })
+
+// const box = document.querySelector(".box"),
+// btn =document.querySelector('button')
+// btn.addEventListener('click' , () =>{
+//     console.log(box.scrollTop);
+// })
+// const style = window.getComputedStyle(box)
+// console.log(style.display);//displaysiz hamma compiyuter stillar chiqadi displey jiyiga nima yozilsaham oshani stillarini chiqaradi
+
+
+// const box = document.querySelector(".box"),
+// btn =document.querySelector('button')
+// console.log(document.documentElement.clientWidth);//ekranni enini o'lchadi
