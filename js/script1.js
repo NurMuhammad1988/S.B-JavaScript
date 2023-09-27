@@ -1312,7 +1312,47 @@
 // const style = window.getComputedStyle(box)
 // console.log(style.display);//displaysiz hamma compiyuter stillar chiqadi displey jiyiga nima yozilsaham oshani stillarini chiqaradi
 
-
 // const box = document.querySelector(".box"),
 // btn =document.querySelector('button')
 // console.log(document.documentElement.clientWidth);//ekranni enini o'lchadi
+
+///////////////////////////////////Function Constructor/////////////////////////////////////////
+
+// const number = new Function()// bu eski yo'li
+// console.log(number);
+
+// const number = new Function()
+// console.dir(number);//dir bilan yozilganda object holatda chiqadi chunku jsda hamma narsa abject hissoblanadi masalan oop deyiladi yani ojectga yo'naltirilgan dasturlash
+
+// function Car(name , color){
+//     this.name = name
+//     this.color = color
+//     this.isAirbag = true
+// }
+
+// const bmw = new Car('bmw' , 'red')// bu joyda Car funksiyasi construktorga aylanib construktor ichida Carni hususiyatlariga value berib chiqdi// yani funksiya yozib uni object sifatida ishlatishimiz mumkun
+// console.log(bmw);
+
+function Car(name, color, mph) {//function constructor shundan function constructor yozilganda nomi albatta katta hariflar bilan yozilish kerak yani Carni
+    this.name = name;
+    this.color = color;
+    this.mph = mph;
+    this.isAirbag = true;
+    this.speed = function () {
+        console.log(`speed of car ${this.name} is ${this.mph}`);
+    };
+}
+
+Car.prototype.sayHello = function(){
+     console.log(`Car nome of ${this.name} say hello`);
+}
+
+const bmw = new Car("bmw", "red", 300 );//new kalit so'zi bilan ishlatilayotgan yangi o'zgaruvchilar(pastidagiham)
+const merc = new Car("merc", "black",280 ); //yani bu mer va tepasidagi car protatip funksion object cardan(tepadan) voris bo'lib kelayapti va bu car  protatip funksion objectni har hil bo'lib kelayapti yani yangi o'zgaruvchi ochib unga hohlagan nom berib va new Car qilib chaqirilib parametiriga qiymatlar berilsa yangi ochilgan o'zgaruvchini qiymatiga aylanadi//yani bitta funksya ochib unga har hil qo'shimga o'zgaruvchilar qo'shib(ochib) unga har hil qiymatlar berish mumkun// yani bu kodlarni optimallashtirishga yordam beradi masalan 10 ta sileder ochib unga bitta funksiya yordamida har hil parametrlar yozish mumkun// metodlariniham yozish mumkun
+bmw.sayHello()//say hello protatipeni ichida
+merc.sayHello()//say hello protatipeni ichida
+
+bmw.speed()
+merc.speed()
+console.log(bmw);
+console.log(merc);
