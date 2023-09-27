@@ -1324,35 +1324,169 @@
 // const number = new Function()
 // console.dir(number);//dir bilan yozilganda object holatda chiqadi chunku jsda hamma narsa abject hissoblanadi masalan oop deyiladi yani ojectga yo'naltirilgan dasturlash
 
-// function Car(name , color){
+// function Car(name , color){//Bu joyda Car(katta hariflar bilan yoziladi) construktor hissoblanadi yani buni ichidagi thislar har biri bir o'zgaruvchi hissoblanadi
 //     this.name = name
 //     this.color = color
 //     this.isAirbag = true
 // }
-
-// const bmw = new Car('bmw' , 'red')// bu joyda Car funksiyasi construktorga aylanib construktor ichida Carni hususiyatlariga value berib chiqdi// yani funksiya yozib uni object sifatida ishlatishimiz mumkun
+// const bmw = new Car('bmw' , 'red')// bu joyda Car funksiyasi construktorga aylanib construktor ichida Carni hususiyatlariga value berib chiqdi  valuelarni otasi yani thislar aslida o'zgaruvchiga teng// yani funksiya yozib uni object sifatida ishlatishimiz mumkun
 // console.log(bmw);
 
-function Car(name, color, mph) {//function constructor shundan function constructor yozilganda nomi albatta katta hariflar bilan yozilish kerak yani Carni
-    this.name = name;
-    this.color = color;
-    this.mph = mph;
-    this.isAirbag = true;
-    this.speed = function () {
-        console.log(`speed of car ${this.name} is ${this.mph}`);
-    };
-}
+// function Car(name , color){//Bu joyda Car(katta hariflar bilan yoziladi) construktor hissoblanadi yani buni ichidagi thislar har biri bir o'zgaruvchi hissoblanadi
+//     this.name = name
+//     this.color = color
+//     this.isAirbag = true
+// }
+// const bmw = new Car('bmw' , 'red')// bu joyda Car funksiyasi construktorga aylanib construktor ichida Carni hususiyatlariga value berib chiqdi  valuelarni otasi yani thislar aslida o'zgaruvchiga teng// yani funksiya yozib uni object sifatida ishlatishimiz mumkun
+// const merc = new Car('mers', 'black')//yani bu joyda     yangi o'zgaruvchi ochib unga merc degan nom berib new Car qilib ochilganda va ichiga qiymatlar berilganda u yuqoridagi Car funksiyasiga tobe bo'ladi birinchi qiymatlarni asosiy funcsiyadan olib to'laqonli funksiya qilib qayaradi har birini alohia
+// console.log(bmw);
+// console.log(merc);
 
-Car.prototype.sayHello = function(){
-     console.log(`Car nome of ${this.name} say hello`);
-}
+// ///////////////////////////////////////////////////////////////////
+// function Car(name, color, mph) {
+//     //function constructor shundan function constructor yozilganda nomi albatta katta hariflar bilan yozilish kerak yani Carni
+//     this.name = name;
+//     this.color = color;
+//     this.mph = mph;
+//     this.isAirbag = true;
+//     this.speed = function () {
+//         console.log(`speed of car ${this.name} is ${this.mph}`);
+//     }; //interpalatsa yani``<= manashu yordamida yozilganda text yozilgandan keyin ${}<= shunaqa yozib ichiga funksiyadan kelayotgan qiymatni yozib qo'yish mumkun
+// }
+// Car.prototype.sayHello = function () {
+//     console.log(`Car nome of ${this.name} say hello`);
+// };
+// const audi = new Car("audi", "black", 220); //audi o'zgaruvchini boshiga qo'ysamham 3 chi bo'lib o'qidi yani Car funksiyani bola o'zgaruvchilari yozilishiga qarab tartiblanadi
+// const bmw = new Car("bmw", "black", 320);
+// const merc = new Car("mers", "black", 420);
+// bmw.sayHello();
+// merc.sayHello();
+// audi.sayHello();
+// bmw.speed();
+// merc.speed();
+// audi.speed();
+// console.log(bmw);
+// console.log(merc);
+// console.log(audi);
+// ///////////////////////////////////////////////////////////
 
-const bmw = new Car("bmw", "red", 300 );//new kalit so'zi bilan ishlatilayotgan yangi o'zgaruvchilar(pastidagiham)
-const merc = new Car("merc", "black",280 ); //yani bu mer va tepasidagi car protatip funksion object cardan(tepadan) voris bo'lib kelayapti va bu car  protatip funksion objectni har hil bo'lib kelayapti yani yangi o'zgaruvchi ochib unga hohlagan nom berib va new Car qilib chaqirilib parametiriga qiymatlar berilsa yangi ochilgan o'zgaruvchini qiymatiga aylanadi//yani bitta funksya ochib unga har hil qo'shimga o'zgaruvchilar qo'shib(ochib) unga har hil qiymatlar berish mumkun// yani bu kodlarni optimallashtirishga yordam beradi masalan 10 ta sileder ochib unga bitta funksiya yordamida har hil parametrlar yozish mumkun// metodlariniham yozish mumkun
-bmw.sayHello()//say hello protatipeni ichida
-merc.sayHello()//say hello protatipeni ichida
+// const bmw = new Car("bmw", "red", 300 );//new kalit so'zi bilan ishlatilayotgan yangi o'zgaruvchilar(pastidagiham)
+// const merc = new Car("merc", "black",280 ); //yani bu mer va tepasidagi car protatip funksion object cardan(tepadan) voris bo'lib kelayapti va bu car  protatip funksion objectni har hil bo'lib kelayapti yani yangi o'zgaruvchi ochib unga hohlagan nom berib va new Car qilib chaqirilib parametiriga qiymatlar berilsa yangi ochilgan o'zgaruvchini qiymatiga aylanadi//yani bitta funksya ochib unga har hil qo'shimga o'zgaruvchilar qo'shib(ochib) unga har hil qiymatlar berish mumkun// yani bu kodlarni optimallashtirishga yordam beradi masalan 10 ta sileder ochib unga bitta funksiya yordamida har hil parametrlar yozish mumkun// metodlariniham yozish mumkun
+// bmw.sayHello()//say hello protatipeni ichida
+// merc.sayHello()//say hello protatipeni ichida
 
-bmw.speed()
-merc.speed()
-console.log(bmw);
-console.log(merc);
+// bmw.speed()
+// merc.speed()
+// console.log(bmw);
+// console.log(merc);
+
+////////////////////////// Context this & Closure//////////////////
+//ODDIY FUNCSIYANI CONTEXTI WINDOWGA TENG
+
+// //1- chi Context this = bu kalit so'z yani bunda har doim ichida nimadur bor bo'ladi yani nimagadur osiladi qaram bo'ladi va qaram bo'lgan narasidan vorislanadi ichidagi narsalalarini ishlatadi
+// function logger() {
+//     //ODDIY FUNCTIONNI CONTENSI YANI THIS HAR DOIM WINDOW GLOBAL OBJECTGA QARAM BO'LADI YANI OSILADI AGARDA QATTIY REJIM YONIQ BO'LSA CONTEXT UNDEFINEDGA TENG
+//     console.log(this); //bu this yani funksiyani thisi dooim udefined bo'ladi qachonki use scrit o'chiq bo'lsa faqat window qaytaradi// yani faqat funksiya kalit sozi bilan yozilgandagina  bu this windowga osiladi//use strictni foydalaridan biri agar use strict yoniq bo'lsa this windowga osilmaydi undefined bolib qoladi
+// }
+
+// function logger(a, b) {
+//     console.log(this);
+//     function sum() {
+//         console.log(this);
+//         return this.a + this.b;
+//     }
+//     console.log(sum());
+// }
+// logger(1, 2);
+
+// function logger(a, b) {
+//     console.log(this);
+//     function sum() {
+//         console.log(this);
+//         return a + b;
+//     }
+//     console.log(sum());
+// }
+// logger(1, 2);//bunda 3 chiqadi chunki //context thislar shu turishida undefinedga teg// bunda 3 chiqadi chunku funksiyani ichida sum locol funksiyasi chaqirilgan
+
+// //2- chi context this objectlar ichida nimaga osiladi?//CONTEXT OBJECTNI ICHIDAGI METODDA OBJECTNI O'ZIGA TENG yani bu yerda metod consollini logi
+// const obj = {
+//     x: 10,
+//     y: 15,
+//     sum: function () {
+//         console.log(this);//pbjectlarni ichida this objectni o'ziga teng
+//     },
+// };
+// obj.sum()
+
+// const obj = {
+//     x: 10,
+//     y: 15,
+//     sum: function () {
+//         function logger() {
+//             console.log(this);
+//         }
+//         logger();
+//     },
+// };
+// obj.sum();
+
+// //3- CHI context this constructorlarda nimaga teng??//Context this consturoctorda yangi objectni nusxasiga teng
+
+// function Car(name, color) {
+//     this.name = name;
+//     this.clor = color;
+//     this.isAirbag = true;
+// }
+// const bmw = new Car("BMW", "Black");
+// console.log(bmw);
+
+/////////////////////////////////closure/////////////////////////
+// const as = 4//closure// as nomli glabal o'zgaruvchi ochilib unga 4 qiymati berildi va funksiya ochilib unga logda shu as o'zgaruvchini chaqir deyildi bunda javob 4 chiqdi yani closure holati ishga tushib glabal hududdan yani asoosiy js faildan as ni izladi va topib 4 chiqardi lekin funkisyani ichida  as degan o'zgaruvchi ochilgandan keyin closure ishlab dastur birinchi funksiyani ichidan izlaydi va agar topsa shu funksiyani ichidagi as ni chiqaradi//yani  sabab shuki log funksiyani ichiga berilgan// birinchi funksiyani ichidan qidiradi topaolmasa glabal fayilga yani tashqariga chiqadi
+// function los(){
+//     const as = 5
+//     console.log(as);
+// }
+// los()
+
+///////////////////// Call, Apply & Bind//////////////////////////
+
+//  1-CHI METOD CALL, 2-CHI METOD APLLY, 3-CHI METOD BIND BULAR PASTDA YOZILGAN TARTIBI BILAN
+
+// function logger (){
+//     console.log(this);//manashu car objectni chiqarib berdi yani this ozi qaram bo'lgan carni chiqarib berdi
+//     console.log(this.name);
+// }
+// const car ={
+//     name:'BMW',
+//     color:'Black'
+// }
+// logger.call(car)//call va apply// yani call metodi  car degan ozgaruvchini contextni ulab qo'y degani//yani thisga car degan o'zgaruvchini qaram qilib qo'ydik
+// // logger()
+
+// function logger (){
+//     console.log(this);//manashu car objectni chiqarib berdi yani this ozi qaram bo'lgan carni chiqarib berdi
+//     console.log(`my car is ${this.name} color is ${this.color}`);//interpalatsya orqali yozish!!!!!!!!!!
+// }
+// const car ={
+//     name:'BMW',
+//     color:'Black'
+// }
+// logger.apply(car)//call va apply ikkkalasi bir hil ishleydi// yani call metodi  car degan ozgaruvchini contextni ulab qo'y degani//yani thisga car degan o'zgaruvchini qaram qilib qo'ydik
+// // logger()
+
+// function logger(spead) {
+//     console.log(this); //manashu car objectni chiqarib berdi yani this ozi qaram bo'lgan carni chiqarib berdi
+//     console.log(
+//         `my car is ${this.name} color is ${this.color}.max speed ${spead}`
+//     ); //interpalatsya orqali yozish!!!!!!!!!!
+// }
+// const car = {
+//     name: "BMW",
+//     color: "Black",
+// };
+// logger.call(car, 230); //call va aplly metodini farqi faqat parametrlarni chaqirishda
+// logger.apply(car, [200]); //call va apply metodini farqi faqat parametrlarni chaqirishda
+// //call va apply ikkkalasi bir hil ishleydi bittagina farqi bor yani parametr (speed) massivni ichida chaqilishi  kerak// yani call metodi  car degan ozgaruvchini contextni ulab qo'y degani//yani thisga car degan o'zgaruvchini qaram qilib qo'ydik
+
+
