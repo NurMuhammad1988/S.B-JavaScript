@@ -1489,4 +1489,45 @@
 // logger.apply(car, [200]); //call va apply metodini farqi faqat parametrlarni chaqirishda
 // //call va apply ikkkalasi bir hil ishleydi bittagina farqi bor yani parametr (speed) massivni ichida chaqilishi  kerak// yani call metodi  car degan ozgaruvchini contextni ulab qo'y degani//yani thisga car degan o'zgaruvchini qaram qilib qo'ydik
 
+// function calc(number) {
+//     //parametrdagi number sabab funcsiya numberlar bilan ishleydi
+//     return this * number; //bu yerda boshidan funksya yozildi va parametrga number berildi va thisga ko'payturuv number berildi
+// }
+// const multilpe2 = calc.bind(2);//bind bizga yangi funcsiya qaytaradi va bu funcsiya nimagadur ulangan bo'ladi calc o'zgaruvchiga ulandi
+// console.log(multilpe2(10));
+// console.log(multilpe2(15));
 
+// const btn = document.querySelector('button')
+// btn.addEventListener('click', function(){//oddiy functionda button strelkali functionda esa window qaytaradi
+//     console.log(this);
+// }) 
+
+// const btn = document.querySelector('button')
+// btn.addEventListener('click', function(){//oddiy strelkasiz oddiy funksayada context this elementni o'ziga teng bo'ladi
+//     this.style.width = '400px'// Shunda button 400px ga o'zgaradi
+// }) 
+
+// const btn = document.querySelector('button')
+// btn.addEventListener('click', ()=>{//oddiy strelkasiz oddiy funksayada context this elementni o'ziga teng bo'ladi //shunda thisni tepasida osiladigan narsasi yo'qligi uchun hato beradi bu bag  
+//     this.style.width = '400px'// Shunda button 400px ga o'zgaradi
+// }) 
+
+// const btn = document.querySelector('button')
+// btn.addEventListener('click', (e)=>{
+//     e.target.style.width = '400px'// Shunda button 400px ga o'zgaradi// buttonni o'zgartirishni eng qulay yo'li event targetda qilgan maqul va oson
+// }) 
+
+// const obj ={
+//     x:10,
+//     y:15,
+//     sum: function(){
+//         const logger = () =>{//strelkali va oddiy funksiyani bu joydagi farqi(qovuslaridagi ranglardaham farq bo'larkan) yani farqi shuki oddiy funksiyada this context windowga osilardi(use strict ishlamagan paytda) bu yerda yani strelkali funcsiyada esa this context o'zi ichida yozilgan objga teng bo'ladi //oddiy strelkasiz funksiyada o'zini window contexti bo'ladi strelkali funksiyada esa hech qachon o'zini contextni yo'q bo'ladi u har doim o'zini tepasiga osiladi tepasidan vorislanadi meros oladi qaytaradi chunki tepadagi sum funksiyasi (contexti) objga teng
+//             console.log(this.x, this.y);// shunday qilib alohida alohida olishxam mumkun
+//         }
+//         logger()
+//     }  
+// }
+// obj.sum()
+
+const calc = (a)=> a+ 10
+console.log(calc(10));//bu kam qator yoziladigan kop'rinishiagar bittaginafunksiyani ishlatish kerey bo'sa shunday yozsaham bo'ladi
