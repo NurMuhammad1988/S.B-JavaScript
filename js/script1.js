@@ -1500,22 +1500,22 @@
 // const btn = document.querySelector('button')
 // btn.addEventListener('click', function(){//oddiy functionda button strelkali functionda esa window qaytaradi
 //     console.log(this);
-// }) 
+// })
 
 // const btn = document.querySelector('button')
 // btn.addEventListener('click', function(){//oddiy strelkasiz oddiy funksayada context this elementni o'ziga teng bo'ladi
 //     this.style.width = '400px'// Shunda button 400px ga o'zgaradi
-// }) 
+// })
 
 // const btn = document.querySelector('button')
-// btn.addEventListener('click', ()=>{//oddiy strelkasiz oddiy funksayada context this elementni o'ziga teng bo'ladi //shunda thisni tepasida osiladigan narsasi yo'qligi uchun hato beradi bu bag  
+// btn.addEventListener('click', ()=>{//oddiy strelkasiz oddiy funksayada context this elementni o'ziga teng bo'ladi //shunda thisni tepasida osiladigan narsasi yo'qligi uchun hato beradi bu bag
 //     this.style.width = '400px'// Shunda button 400px ga o'zgaradi
-// }) 
+// })
 
 // const btn = document.querySelector('button')
 // btn.addEventListener('click', (e)=>{
 //     e.target.style.width = '400px'// Shunda button 400px ga o'zgaradi// buttonni o'zgartirishni eng qulay yo'li event targetda qilgan maqul va oson
-// }) 
+// })
 
 // const obj ={
 //     x:10,
@@ -1525,9 +1525,63 @@
 //             console.log(this.x, this.y);// shunday qilib alohida alohida olishxam mumkun
 //         }
 //         logger()
-//     }  
+//     }
 // }
 // obj.sum()
 
-const calc = (a)=> a+ 10
-console.log(calc(10));//bu kam qator yoziladigan kop'rinishiagar bittaginafunksiyani ishlatish kerey bo'sa shunday yozsaham bo'ladi
+// const calc = (a)=> a+ 10
+// console.log(calc(10));//bu kam qator yoziladigan kop'rinishiagar bittaginafunksiyani ishlatish kerey bo'sa shunday yozsaham bo'ladi
+
+//////////////////////////Class ES6//////////////////////////////////
+
+// class Car {
+//     //classlarni nomi doim katta harflar bilan boshlanadi
+//     constructor(name, color, speed) {//Yani bitta class yozib uni hohlagancha yangi o'zgaruvchiga olib classni icghidagi qiymatlarni qayta qayta ishlatish mumkun//bu global class yoki construksiya desaham bo'ladi
+//         this.name = name;
+//         this.color = color;
+//         this.speed = speed;
+//     }
+//     calcSpeed(){
+//         return this.speed * 100
+//     }
+// }
+// const bmw =new Car('BBW', 'BLACK',200)//bitta class yani(Car) yasab uni ichidagi parametrlariga yozilgan hususiyatlardan hohlagancha yani o'zgaruvchi yasab qayta qayta foydalansa bo'ladi
+// const merc = new Car('MERC','RED', 100 )
+// // console.log(bmw);
+// // console.log(merc);
+// console.log(bmw.calcSpeed());
+// console.log(merc.calcSpeed());
+
+class Car {
+    //yani bu Car classi fundament class hissoblanadi
+    //classlarni nomi doim KATTA harflar bilan boshlanadi
+    constructor(name, color, speed) {
+        //Yani bitta class yozib uni hohlagancha yangi o'zgaruvchiga olib classni icghidagi qiymatlarni qayta qayta ishlatish mumkun//bu global class yoki construksiya desaham bo'ladi yani oop
+        this.name = name; //bular ichki o'zgaruvchi, qiymatlar
+        this.color = color;
+        this.speed = speed;
+    }
+    calcSpeed() {
+        //Carni ichida bo'lgani uchun bu metodni contexti Carni constroctorini nusxasiga teng bo'ladi yani Carni ichidagi constructorni nusxasiga teng bo'ladi
+        return this.speed * 100;
+    }
+}
+class Spark extends Car {
+    //bu yerda esa yangi Spark degan class ochildi va yuqoridagi Car degan classdan vorislandi extends funksiyasini yozib keyin mavjud classni nomi yozilsa yani (Car) shu yozilgan classdan meros oladi yani parametrlariga yozilgan thislarni oladi yani Carni ichida nima bo'lsa Spark classini ichidaham shu narsalar bor bo'ladi
+    constructor(name, color, speed, isAirbag, extraBallon) {
+        //yani constructor yozib parametriga Cardagi qaysi hususiyat kerey bo'lsaa parametriga shu hususiyatlar yoziladi parametrda Spark classiga qo'shimcha ravishda isAirbag va extraBallon yozildi
+        super(name, color, speed); //bu super degani ona classdan yani Cardan bola classga yani Sparkga ona classni qaysi propertylarini(hususiyatlarini) olishn kereyligi yoziladi va bu doim BIRINCHI QATORDA KELISH KEREY YANI ENG BIRINCHI SSSUUUPPPEEERRR YOZILISHI KEREY
+        this.isAirbag = isAirbag; //bu yangi thislar yani constructor ichidagi yangi logal o'zgaruvchilar Sparkni Cardan olgan hususiyatlariga qo'shimcha ravishda kiritilsyspti shunday qilib (es6 versionda) ona classni boshqa o'zgaruvchilariga qo'shimcha hususiyatlar yozish mumkun
+        this.extraBallon = extraBallon;
+    }
+    logger() {
+        //logger bu yerda metod sifatida yozildi//yani bu logger consolda chaqirilganda ichidagi enterpalatsa orqali yangi Sparkni hamma malumotlarini beradi
+        console.log(
+            `Name of car ${this.name} color is ${this.color}. Is airbag there ${this.isAirbag}.  Are there extra ballon ${this.extraBallon}`
+        );
+    }
+}
+const aboutCar = new Spark("Spark", "White", 100, true, 5);//constructorni ichidagi yangi class Sparkni chaqirganda uni parametrlari novbat ketma ketligi tartib bilan yozilishi kerey agar noto'g'ri ketsa undefined chiqadi yani consol topolmagan qiymatini undefined qilib chiqarib beradi/////////yani bu yerda spark bor  sparkni protatype ona class Car
+aboutCar.logger();
+console.log(aboutCar.calcSpeed());//yani bu yerda Carni ichidagi calxSpeed metodiniham chaqirib ishlatsa bo'ladi yani speed 100ga ko'paytirilib berildi
+console.log(aboutCar);
