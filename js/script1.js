@@ -1552,36 +1552,114 @@
 // console.log(bmw.calcSpeed());
 // console.log(merc.calcSpeed());
 
-class Car {
-    //yani bu Car classi fundament class hissoblanadi
-    //classlarni nomi doim KATTA harflar bilan boshlanadi
-    constructor(name, color, speed) {
-        //Yani bitta class yozib uni hohlagancha yangi o'zgaruvchiga olib classni icghidagi qiymatlarni qayta qayta ishlatish mumkun//bu global class yoki construksiya desaham bo'ladi yani oop
-        this.name = name; //bular ichki o'zgaruvchi, qiymatlar
-        this.color = color;
-        this.speed = speed;
-    }
-    calcSpeed() {
-        //Carni ichida bo'lgani uchun bu metodni contexti Carni constroctorini nusxasiga teng bo'ladi yani Carni ichidagi constructorni nusxasiga teng bo'ladi
-        return this.speed * 100;
-    }
-}
-class Spark extends Car {
-    //bu yerda esa yangi Spark degan class ochildi va yuqoridagi Car degan classdan vorislandi extends funksiyasini yozib keyin mavjud classni nomi yozilsa yani (Car) shu yozilgan classdan meros oladi yani parametrlariga yozilgan thislarni oladi yani Carni ichida nima bo'lsa Spark classini ichidaham shu narsalar bor bo'ladi
-    constructor(name, color, speed, isAirbag, extraBallon) {
-        //yani constructor yozib parametriga Cardagi qaysi hususiyat kerey bo'lsaa parametriga shu hususiyatlar yoziladi parametrda Spark classiga qo'shimcha ravishda isAirbag va extraBallon yozildi
-        super(name, color, speed); //bu super degani ona classdan yani Cardan bola classga yani Sparkga ona classni qaysi propertylarini(hususiyatlarini) olishn kereyligi yoziladi va bu doim BIRINCHI QATORDA KELISH KEREY YANI ENG BIRINCHI SSSUUUPPPEEERRR YOZILISHI KEREY
-        this.isAirbag = isAirbag; //bu yangi thislar yani constructor ichidagi yangi logal o'zgaruvchilar Sparkni Cardan olgan hususiyatlariga qo'shimcha ravishda kiritilsyspti shunday qilib (es6 versionda) ona classni boshqa o'zgaruvchilariga qo'shimcha hususiyatlar yozish mumkun
-        this.extraBallon = extraBallon;
-    }
-    logger() {
-        //logger bu yerda metod sifatida yozildi//yani bu logger consolda chaqirilganda ichidagi enterpalatsa orqali yangi Sparkni hamma malumotlarini beradi
-        console.log(
-            `Name of car ${this.name} color is ${this.color}. Is airbag there ${this.isAirbag}.  Are there extra ballon ${this.extraBallon}`
-        );
-    }
-}
-const aboutCar = new Spark("Spark", "White", 100, true, 5);//constructorni ichidagi yangi class Sparkni chaqirganda uni parametrlari novbat ketma ketligi tartib bilan yozilishi kerey agar noto'g'ri ketsa undefined chiqadi yani consol topolmagan qiymatini undefined qilib chiqarib beradi/////////yani bu yerda spark bor  sparkni protatype ona class Car
-aboutCar.logger();
-console.log(aboutCar.calcSpeed());//yani bu yerda Carni ichidagi calxSpeed metodiniham chaqirib ishlatsa bo'ladi yani speed 100ga ko'paytirilib berildi
-console.log(aboutCar);
+// class Car {
+//     //yani bu Car classi fundament class hissoblanadi
+//     //classlarni nomi doim KATTA harflar bilan boshlanadi
+//     constructor(name, color, speed) {
+//         //Yani bitta class yozib uni hohlagancha yangi o'zgaruvchiga olib classni icghidagi qiymatlarni qayta qayta ishlatish mumkun//bu global class yoki construksiya desaham bo'ladi yani oop
+//         this.name = name; //bular ichki o'zgaruvchi, qiymatlar
+//         this.color = color;
+//         this.speed = speed;
+//     }
+//     calcSpeed() {
+//         //Carni ichida bo'lgani uchun bu metodni contexti Carni constroctorini nusxasiga teng bo'ladi yani Carni ichidagi constructorni nusxasiga teng bo'ladi
+//         return this.speed * 100;
+//     }
+// }
+// class Spark extends Car {
+//     //bu yerda esa yangi Spark degan class ochildi va yuqoridagi Car degan classdan vorislandi extends funksiyasini yozib keyin mavjud classni nomi yozilsa yani (Car) shu yozilgan classdan meros oladi yani parametrlariga yozilgan thislarni oladi yani Carni ichida nima bo'lsa Spark classini ichidaham shu narsalar bor bo'ladi
+//     constructor(name, color, speed, isAirbag, extraBallon) {
+//         //yani constructor yozib parametriga Cardagi qaysi hususiyat kerey bo'lsaa parametriga shu hususiyatlar yoziladi parametrda Spark classiga qo'shimcha ravishda isAirbag va extraBallon yozildi
+//         super(name, color, speed); //bu super degani ona classdan yani Cardan bola classga yani Sparkga ona classni qaysi propertylarini(hususiyatlarini) olishn kereyligi yoziladi va bu doim BIRINCHI QATORDA KELISH KEREY YANI ENG BIRINCHI SSSUUUPPPEEERRR YOZILISHI KEREY
+//         this.isAirbag = isAirbag; //bu yangi thislar yani constructor ichidagi yangi logal o'zgaruvchilar Sparkni Cardan olgan hususiyatlariga qo'shimcha ravishda kiritilsyspti shunday qilib (es6 versionda) ona classni boshqa o'zgaruvchilariga qo'shimcha hususiyatlar yozish mumkun
+//         this.extraBallon = extraBallon;
+//     }
+//     logger() {
+//         //logger bu yerda metod sifatida yozildi//yani bu logger consolda chaqirilganda ichidagi enterpalatsa orqali yangi Sparkni hamma malumotlarini beradi
+//         console.log(
+//             `Name of car ${this.name} color is ${this.color}. Is airbag there ${this.isAirbag}.  Are there extra ballon ${this.extraBallon}`
+//         );
+//     }
+// }
+// const aboutCar = new Spark("Spark", "White", 100, true, 5);//constructorni ichidagi yangi class Sparkni chaqirganda uni parametrlari novbat ketma ketligi tartib bilan yozilishi kerey agar noto'g'ri ketsa undefined chiqadi yani consol topolmagan qiymatini undefined qilib chiqarib beradi/////////yani bu yerda spark bor  sparkni protatype ona class Car
+// aboutCar.logger();
+// console.log(aboutCar.calcSpeed());//yani bu yerda Carni ichidagi calxSpeed metodiniham chaqirib ishlatsa bo'ladi yani speed 100ga ko'paytirilib berildi
+// console.log(aboutCar);
+
+////////////////////////////////////rest operator va parametrni defpul qiymati darslari 3-modul projectda o'tildi////////////////////////////////////////////////////////////////////////////////
+
+// function logger(a, b, ...rest) {//rest operator parametrda yo'q  lekin chaqirilganda bor bo'lgan parametrlarni bitta massivga yig;ib beradi
+//     console.log(a);
+//     console.log(b);
+//     console.log(rest);
+// }
+// logger(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+// function logger(a, b, ...rest) {//rest operator parametrda yo'q  lekin chaqirilganda bor bo'lgan parametrlarni bitta massivga yig;ib beradi
+//     console.log(a,b,rest);//yani rest operator sabab logger funksiya CHAQIRILGANDA YOZILGAN PARAMETRLAR MASSIV HOLATIDA KELADI
+
+// }
+// logger(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+///////////////////////////////////////////////////////////////////////////parametrning sukut qiymati//////////////////////
+
+// function calc(number, def = 10) {//shunday yozilishi yangisi va qisqasi
+//     console.log(number + def);
+// }
+// calc(10)
+
+///////////////////////////server nima darsi 3-modul projectda////////////////////////////
+
+//////////////////////////////////////json chuqur clonlash json server//////////////////////////////////////////////////////////
+
+//json nima json bu java script object notion (noteyshin) deb ataladi json hajmi juda kichkina
+
+// const car = {//malumotni jsnon formatga aylantirish
+//     //malumotni serverga doim json farmatda yuborish kerak server boshqa formatni qabul qilmaydi
+//     name: "bmw",
+//     color: "red",
+// };
+// const objToJSON = JSON.stringify(car); //stringify metodi fayli json formatga o'girib json formatda object logda ikkitalik qo'shtirnoq ichida bo'ladi shu bilan ajralib turadi
+// console.log(objToJSON);
+
+// const car = {//serverdan kelayotgan malumotni json formatdagi malumotniobjectga o'girish,aylanirish//serverdan qanday malumot kelsaham uni parse qilib object formatiga o'tqazish kerak
+//     name: "bmw",
+//     color: "red",
+// };
+// const objToJSON = JSON.stringify(car); //serverga json qilib jo'natish
+// const jsonToObj = JSON.parse(objToJSON)//serverdan object qilib qaytarish
+// console.log(objToJSON);//bu stringify metodi orqali json formatga aylantirilgan object
+// console.log(jsonToObj); //bu parse metodi orqali serverdan kelaydigan json formatni objectga aylantilgani
+
+// const car = {
+//     name: "bmw",
+//     color: "red",
+//     extra: {
+//         isAirbag: false,
+//         ballon: 5,
+//     },
+// };
+// const clone = JSON.parse(JSON.stringify(car));
+// console.log(clone);
+
+// const car = {
+//     name: "bmw",
+//     color: "red",
+//     extra: {
+//         isAirbag: false,
+//         ballon: 5,
+//     },
+// };
+// const clone = JSON.parse(JSON.stringify(car));// bu joyda object to'liq clounlandi yani parse va stringify metodlari orqali 
+// clone.extra.ballon = 10;//bu joyda clone o'zgaruvchisiga murojat qilinib ichidagi extra va extrani ichidagi balloni 10 ga o'zgartir degan buyruq yozildi //shunda clonega bunday tartibda murojat qilinishiga qaraganda log/clone malumotlarni parseni ichida chaqirilganda strinifyni parametridagi car o'zgaruvchidan oladi
+// console.log(car);//o'z holatida turipti
+// console.log(clone);//clone abject ballon 10 ga o'zgardi
+// //parse va stringify metodlari va JSON orqali objectlarimizni chuqur clonlashimiz mumkun bo'ladi yani serverga json format jonatish serverdan kelayotgan json formatni object formatga o'girishimiz mumkun bo'ladi 
+
+//////////////////////////////////AJAX DARSI ASOSIY RO'YHATDA JAX.HTML FAILIDA ////////////////////ajax yani ayax server bilan muloqot texnologiyasi yani asinxron javascript and XML serverga so'rov yuborish  /////////////////////////////////////
+
+//ajax texnalogiyasi yordamida website sahifasida faqat kerakli joyini serverdan chaqiramiz yani sahifa qayta yuklanmasdan
+
+
+ 
+ 
