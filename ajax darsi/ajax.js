@@ -48,3 +48,5 @@ uzs.addEventListener("input", (e) => {//yani uzs idisi click bo'lganda
     //readyState holatni aniqlash masalan load payti yani malumot  serverdan kelyotgan holatini holati masalan qaysi holatda ekanligi 5 ta holati bor//
 });////Bu yerda faqat malumotni serverdan olish haqida dars bo'ldi
 //////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////ajax post darsi 3 mudul loyohada amaliy qilindi//////////////////////////////
