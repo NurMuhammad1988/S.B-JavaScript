@@ -1656,7 +1656,7 @@
 // console.log(clone);//clone abject ballon 10 ga o'zgardi
 // //parse va stringify metodlari va JSON orqali objectlarimizni chuqur clonlashimiz mumkun bo'ladi yani serverga json format jonatish serverdan kelayotgan json formatni object formatga o'girishimiz mumkun bo'ladi 
 
-//////////////////////////////////AJAX DARSI ASOSIY RO'YHATDA JAX.HTML FAILIDA ////////////////////ajax yani ayax server bilan muloqot texnologiyasi yani asinxron javascript and XML serverga so'rov yuborish  /////////////////////////////////////
+//////////////////////////////////AJAX DARSI ASOSIY RO'YHATDA AJAX.HTML FAILIDA ////////////////////ajax yani ayax server bilan muloqot texnologiyasi yani asinxron javascript and XML serverga so'rov yuborish  /////////////////////////////////////
 
 //ajax texnalogiyasi yordamida website sahifasida faqat kerakli joyini serverdan chaqiramiz yani sahifa qayta yuklanmasdan
 
