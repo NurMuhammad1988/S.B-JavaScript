@@ -219,7 +219,52 @@ window.addEventListener("DOMContentLoaded", () => {
         "menu__item"
     ).render();
 
-    
+
+    // //form
+
+    //SERVER BILAN ISHLAMETGANI UCHUN ISHLAMADI BUNI ISHLATISH UCHUN SERVER KERAK MASALAN XAMPP
+    const forms = document.querySelectorAll("form");
+
+    forms.forEach((form) => {
+        postData(form);
+    });
+ 
+    const msg = {
+        loading: "Loading...",
+        success: " Thank's for submiting our form",
+        failure: "Something went wrong",
+    };
+
+    function postData(form) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const statusMessage = document.createElement("div");
+            statusMessage.textContent = msg.loading;
+            form.append(statusMessage);
+
+            const request = new XMLHttpRequest();  
+
+            request.open("POST", "server.php");
+
+            // request.setRequestHeader("Content-Type", "multipart/form-data");
+
+            const formData = new FormData(form);
+
+            request.send(formData);
+
+            request.addEventListener("load", () => {
+                if (request.status === 200) {
+                    console.log(request.response);
+                    statusMessage.textContent = msg.success;
+                }else{
+                    statusMessage.textContent = msg.failure;
+
+                }
+            });
+        });
+    }
+     //SERVER BILAN ISHLAMETGANI UCHUN ISHLAMADI BUNI ISHLATISH UCHUN SERVER KERAK MASALAN XAMPP
 
 });
 
