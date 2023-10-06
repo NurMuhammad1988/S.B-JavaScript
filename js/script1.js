@@ -1650,16 +1650,165 @@
 //         ballon: 5,
 //     },
 // };
-// const clone = JSON.parse(JSON.stringify(car));// bu joyda object to'liq clounlandi yani parse va stringify metodlari orqali 
+// const clone = JSON.parse(JSON.stringify(car));// bu joyda object to'liq clounlandi yani parse va stringify metodlari orqali
 // clone.extra.ballon = 10;//bu joyda clone o'zgaruvchisiga murojat qilinib ichidagi extra va extrani ichidagi balloni 10 ga o'zgartir degan buyruq yozildi //shunda clonega bunday tartibda murojat qilinishiga qaraganda log/clone malumotlarni parseni ichida chaqirilganda strinifyni parametridagi car o'zgaruvchidan oladi
 // console.log(car);//o'z holatida turipti
 // console.log(clone);//clone abject ballon 10 ga o'zgardi
-// //parse va stringify metodlari va JSON orqali objectlarimizni chuqur clonlashimiz mumkun bo'ladi yani serverga json format jonatish serverdan kelayotgan json formatni object formatga o'girishimiz mumkun bo'ladi 
+// //parse va stringify metodlari va JSON orqali objectlarimizni chuqur clonlashimiz mumkun bo'ladi yani serverga json format jonatish serverdan kelayotgan json formatni object formatga o'girishimiz mumkun bo'ladi
 
 //////////////////////////////////AJAX DARSI ASOSIY RO'YHATDA AJAX.HTML FAILIDA ////////////////////ajax yani ayax server bilan muloqot texnologiyasi yani asinxron javascript and XML serverga so'rov yuborish  /////////////////////////////////////
 
 //ajax texnalogiyasi yordamida website sahifasida faqat kerakli joyini serverdan chaqiramiz yani sahifa qayta yuklanmasdan
 
+///////////////////////////////////////////////////Promise////////////////////////////////////////////
 
- 
- 
+// const isFriendCome = false;
+// const meetingRequest = new Promise((resolve, reject) => {//resolve funksiya then metodi orqali ishga tushadi reject funksiya esa catch metodi orqali ishga tushadi
+//     if (isFriendCome) {
+//         const msg = "friend i'm there";
+//         resolve(msg);
+//     } else {
+//         const err = "I can't come there";
+//         reject(err);
+//     }
+// });
+// meetingRequest.then((msg) => console.log(msg)).catch((err) => console.log(err));
+
+/////////////////////////////////////////////////////////////
+
+// const isFriendCome = true;
+// const meetingRequest = new Promise((resolve, reject) => {
+//     if (isFriendCome) {
+//         const msg = "Friend i'm there";
+//         resolve(msg);
+//     } else {
+//         const err = "I can't come there";
+//         reject(err);
+//     }
+// });
+// meetingRequest.then((msg) => console.log(msg)).catch((err) => console.log(err));
+
+// const isFriendCome = true;
+// const meetingRequest = new Promise((resolve, reject) => {
+//     if (isFriendCome) {
+//         const msg = "Friend i'm there";
+//         resolve(msg);
+//     } else {
+//         const err = "I can't come there";
+//         reject(err);
+//     }
+// });
+// meetingRequest
+//     .then((msg) => console.log(msg))
+//     .catch((err) => console.log(err))
+//     .finally(() => console.log("I'm colling you "));
+
+// const isFriendCome = false;
+// const meetingRequest = new Promise((resolve, reject) => {
+//     if (isFriendCome) {
+//         const msg = "Friend i'm there";
+//         resolve(msg);
+//     } else {
+//         const err = "I can't come there";
+//         reject(err);
+//     }
+// });
+// meetingRequest
+//     .then((msg) => console.log(msg))
+//     .catch((err) => console.log(err))
+//     .finally(() => console.log("I'm colling you "));
+
+//sinxron kodlar ketma ketlikda ishga tushadi yani 1 chi qatordan 2 chi qatorga va h.k
+//asinxron kodlar esa qaysi kod  birinchi ishlasa o'shanga aytiladi
+
+// console.log("Request data ...");
+// setTimeout(() => {
+//     console.log("Processing data...");
+//     const product = {
+//         name: "car",
+//         color: "black",
+//     };
+//     setTimeout(() => {
+//         product.status = "order";
+//         console.log(product);
+//     }, 2000);
+// }, 2000);
+
+// console.log("Request data...");
+// const req = new Promise((resolve) => {
+//     setTimeout(() => {
+//         const product = {
+//             name: "car",
+//             color: "black",  
+//         };
+//         console.log("Processing data... ");
+//         resolve(product);
+//     }, 2000);
+// });
+// req.then((data) => {
+//     return new Promise((resolve) => {
+//         setTimeout(() => {
+//             data.status = "ordered";
+//             console.log('Get data...');
+//             resolve(data);
+//         }, 2000);
+//     });
+// })
+//     .then((result) => console.log(result))
+//     .finally(() => console.log("Fetching end"));
+
+// console.log("Request data...");
+// const req = new Promise((resolve) => {
+//     setTimeout(() => {
+//         const product = {
+//             name: "car",
+//             color: "black",
+//         };
+//         console.log("Processing data... ");
+//         resolve(product);
+//     }, 2000);
+// });
+// req.then((data) => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             data.status = "ordered";
+//             console.log("Get data...");
+//             reject();
+//         }, 2000);
+//     });
+// })
+//     .then((result) => console.log(result))
+//     .catch(() => console.log("Something went wrong"))
+//     .finally(() => console.log("Fetching end"));
+
+/////////////////////////////Promise Method/////////////////////////////////
+
+// const request = (time) => {
+//     return new Promise((resolve) => {
+//         setTimeout(() => resolve(), time);
+//     });
+// };
+// request(1000).then(() => console.log("Request 1000 ms"));
+// request(2000).then(() => console.log("Request 2000 ms"));
+// request(3000).then(() => console.log("Request 3000 ms"));
+
+// const request = (time) => {
+//     return new Promise((resolve) => {
+//         setTimeout(() => resolve(), time);
+//     });
+// };
+// Promise.all([request(1000), request(2000), request(3000)]).then(()=> console.log('All '))
+
+// const request = (time) => {
+//     return new Promise((resolve) => {
+//         setTimeout(() => resolve(), time);
+//     });
+// };
+// Promise.race([request(1000), request(2000), request(3000)]).then(()=> console.log('All '))
+
+///////////////////////////Fatch API darsi 3-modul loyihada amaliy qilindi//////////////////////////// 
+/////API - Application Programming interfice 
+/////DOM API - 
+/////GOOGLE MAP API
+/////GOOGLE PLEASE API
+
