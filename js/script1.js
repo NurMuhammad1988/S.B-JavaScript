@@ -1656,22 +1656,24 @@
 // console.log(clone);//clone abject ballon 10 ga o'zgardi
 // //parse va stringify metodlari va JSON orqali objectlarimizni chuqur clonlashimiz mumkun bo'ladi yani serverga json format jonatish serverdan kelayotgan json formatni object formatga o'girishimiz mumkun bo'ladi
 
-//////////////////////////////////AJAX DARSI ASOSIY RO'YHATDA AJAX.HTML FAILIDA ////////////////////ajax yani ayax server bilan muloqot texnologiyasi yani asinxron javascript and XML serverga so'rov yuborish  /////////////////////////////////////
+//////////////////////////////////AJAX DARSI ASOSIY RO'YHATDA AJAX papkasida ////////////////////ajax yani ayax server bilan muloqot texnologiyasi yani asinxron javascript and XML serverga so'rov yuborish  /////////////////////////////////////
 
 //ajax texnalogiyasi yordamida website sahifasida faqat kerakli joyini serverdan chaqiramiz yani sahifa qayta yuklanmasdan
 
 ///////////////////////////////////////////////////Promise////////////////////////////////////////////
 
-// const isFriendCome = false;
-// const meetingRequest = new Promise((resolve, reject) => {//resolve funksiya then metodi orqali ishga tushadi reject funksiya esa catch metodi orqali ishga tushadi
+// const isFriendCome = false; // deylik:false yani do'stim kemadi
+// const meetingRequest = new Promise((resolve, reject) => {
+//     //new bu yerda conctructor//yani meetingRequest o'zgaruvchi promise qaytaradi//Bu Promise faqat shunday yani Promise deb yozilishi kerak//Bu Promise yani vada parametriga ikkita parametr qabul qiladi yani resolve va reject//yani resolve=true yani masalan serverdan malumot kelsa ishleydi rejext=false yani masalan serverdan malumot kelmey qolsa ishleydi //resolve funksiya then metodi orqali ishga tushadi reject funksiya esa catch metodi orqali ishga tushadi
 //     if (isFriendCome) {
 //         const msg = "friend i'm there";
-//         resolve(msg);
+//         resolve(msg); //resolve=yani hal(ijobiy) qilish funksiya faqat true bo'lganda ishga tushadi
 //     } else {
 //         const err = "I can't come there";
-//         reject(err);
+//         reject(err); //reject=yani rad qilish(salbiy) funksiya faqat false bo'lganda ishga tushadi
 //     }
 // });
+// //then metodida resolve funksiyasi ishga tushadi yani msg dagi friend i'm there ishleydi//catch metodi yani reject funksiyasi ishga tushadi yani i can't come there ishleydi////bu yerda isafariendCome false bo'lib turgani uchun catch ishladi yani i can'n come there ishladi
 // meetingRequest.then((msg) => console.log(msg)).catch((err) => console.log(err));
 
 /////////////////////////////////////////////////////////////
@@ -1686,22 +1688,10 @@
 //         reject(err);
 //     }
 // });
-// meetingRequest.then((msg) => console.log(msg)).catch((err) => console.log(err));
-
-// const isFriendCome = true;
-// const meetingRequest = new Promise((resolve, reject) => {
-//     if (isFriendCome) {
-//         const msg = "Friend i'm there";
-//         resolve(msg);
-//     } else {
-//         const err = "I can't come there";
-//         reject(err);
-//     }
-// });
 // meetingRequest
 //     .then((msg) => console.log(msg))
 //     .catch((err) => console.log(err))
-//     .finally(() => console.log("I'm colling you "));
+//     .finally(() => console.log("I'll colling you "));//finally metodi then va catchdan qaysi ishlagan taqdirdaham finally ishleydi yani true bo'lsaham false bo'lsaham finalliy baribir ishleydi
 
 // const isFriendCome = false;
 // const meetingRequest = new Promise((resolve, reject) => {
@@ -1717,45 +1707,71 @@
 //     .then((msg) => console.log(msg))
 //     .catch((err) => console.log(err))
 //     .finally(() => console.log("I'm colling you "));
-
+///////////////////////////////////////////////////////////////////////////
 //sinxron kodlar ketma ketlikda ishga tushadi yani 1 chi qatordan 2 chi qatorga va h.k
-//asinxron kodlar esa qaysi kod  birinchi ishlasa o'shanga aytiladi
-
-// console.log("Request data ...");
-// setTimeout(() => {
+//asinxron kodlar esa qaysi kod  birinchi ishlasa o'shanga aytiladi yani dasturchi qaysi kodni birinchi ishlashini yozsa o'sha kod ishga tushadi yoki ko'plikda qaysi kodlarni ishlashini yozsa birinchi o'sha kodlar ishlaydi
+///////////////////////////////////////////////////////////////////////////
+// console.log("Request data ...");//sinxron kod yani bu birinchi ishleydi
+// setTimeout(() => {//settimeout asinxron ishlash
 //     console.log("Processing data...");
 //     const product = {
 //         name: "car",
 //         color: "black",
 //     };
-//     setTimeout(() => {
+//     setTimeout(() => {//asinxron ishlash
 //         product.status = "order";
 //         console.log(product);
 //     }, 2000);
-// }, 2000);
+// }, 2000);//settimeoutni bitta minus tarafi bor masalan serverdan malumotni 2000 ms dan keyin kelsin deb buyurilsa lekin serverdan malumot shu vaqt ichida kelmasligiham mumkun yani serverda qandaydur muammo bo'lsa
 
-// console.log("Request data...");
-// const req = new Promise((resolve) => {
+// console.log("Request data ...");
+// const req = new Promise((resolve) => {//hamma narsa to'g'ri ishletgani uchun reject funksiyasi yozilmadi
 //     setTimeout(() => {
 //         const product = {
 //             name: "car",
-//             color: "black",  
+//             color: "black",
 //         };
-//         console.log("Processing data... ");
+//         console.log("Processing data ... ");
 //         resolve(product);
 //     }, 2000);
 // });
 // req.then((data) => {
-//     return new Promise((resolve) => {
+//     return new Promise((resolve) => {//aslida callback funksiyada return yozilgan bo'ladi yani ko;rinmeydigan holatda bo'ladi yani newdan oldinh aftamatik tarzda return bor bo'ladi yani new o'zgaruvchi conctructor bo'lgani uchun
 //         setTimeout(() => {
-//             data.status = "ordered";
-//             console.log('Get data...');
+//             data.status = "Ordered";
+//             console.log('Get data ...');
 //             resolve(data);
 //         }, 2000);
 //     });
 // })
-//     .then((result) => console.log(result))
+//     .then((result) => console.log(result))//result yani umumiy natija rezultat keladi yani log bilan umumiy natija ko'rsatilsin deyildi keyin pastdan finally metodi orqali ohiri holat yani logda fetching end yozildi
 //     .finally(() => console.log("Fetching end"));
+
+console.log("Request data ...");
+const req = new Promise((resolve) => {
+    //hamma narsa to'g'ri ishletgani uchun reject funksiyasi yozilmadi
+    setTimeout(() => {
+        const product = {
+            name: "car",
+            color: "black",
+        };
+        console.log("Processing data ... ");
+        resolve(product);
+    }, 2000);
+});
+req.then((data) => {
+    return new Promise((resolve, reject) => {
+        //aslida callback funksiyada return yozilgan bo'ladi yani ko;rinmeydigan holatda bo'ladi yani newdan oldinh aftamatik tarzda return bor bo'ladi yani new o'zgaruvchi conctructor bo'lgani uchun
+        setTimeout(() => {
+            data.status = "Ordered";
+            console.log("Get data ...");//yani datani oldi keyin esa novbatdagi qatordan rejectni oldi reject esa false yani ishlamaganda ishlatiladi
+            reject(data); //yani b u yerda reject yani false funksiya yozilgani uchun something went wrong ishladi  catch bilan chaqirilib reject funksiya ishlatildi
+        }, 2000);
+    });
+})
+    .then((result) => console.log(result)) //result yani umumiy natija rezultat keladi yani log bilan umumiy natija ko'rsatilsin deyildi keyin pastdan finally metodi orqali ohiri holat yani logda fetching end yozildi
+    .catch(() => console.log("Something went wrong"))
+    .finally(() => console.log("Fetching end"));
 
 // console.log("Request data...");
 // const req = new Promise((resolve) => {
@@ -1806,9 +1822,8 @@
 // };
 // Promise.race([request(1000), request(2000), request(3000)]).then(()=> console.log('All '))
 
-///////////////////////////Fatch API darsi 3-modul loyihada amaliy qilindi//////////////////////////// 
-/////API - Application Programming interfice 
-/////DOM API - 
+///////////////////////////Fatch API darsi 3-modul loyihada amaliy qilindi////////////////////////////
+/////API - Application Programming interfice
+/////DOM API -
 /////GOOGLE MAP API
 /////GOOGLE PLEASE API
-
