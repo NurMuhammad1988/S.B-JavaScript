@@ -1747,31 +1747,31 @@
 //     .then((result) => console.log(result))//result yani umumiy natija rezultat keladi yani log bilan umumiy natija ko'rsatilsin deyildi keyin pastdan finally metodi orqali ohiri holat yani logda fetching end yozildi
 //     .finally(() => console.log("Fetching end"));
 
-console.log("Request data ...");
-const req = new Promise((resolve) => {
-    //hamma narsa to'g'ri ishletgani uchun reject funksiyasi yozilmadi
-    setTimeout(() => {
-        const product = {
-            name: "car",
-            color: "black",
-        };
-        console.log("Processing data ... ");
-        resolve(product);
-    }, 2000);
-});
-req.then((data) => {
-    return new Promise((resolve, reject) => {
-        //aslida callback funksiyada return yozilgan bo'ladi yani ko;rinmeydigan holatda bo'ladi yani newdan oldinh aftamatik tarzda return bor bo'ladi yani new o'zgaruvchi conctructor bo'lgani uchun
-        setTimeout(() => {
-            data.status = "Ordered";
-            console.log("Get data ...");//yani datani oldi keyin esa novbatdagi qatordan rejectni oldi reject esa false yani ishlamaganda ishlatiladi
-            reject(data); //yani b u yerda reject yani false funksiya yozilgani uchun something went wrong ishladi  catch bilan chaqirilib reject funksiya ishlatildi
-        }, 2000);
-    });
-})
-    .then((result) => console.log(result)) //result yani umumiy natija rezultat keladi yani log bilan umumiy natija ko'rsatilsin deyildi keyin pastdan finally metodi orqali ohiri holat yani logda fetching end yozildi
-    .catch(() => console.log("Something went wrong"))
-    .finally(() => console.log("Fetching end"));
+// console.log("Request data ...");
+// const req = new Promise((resolve) => {
+//     //hamma narsa to'g'ri ishletgani uchun reject funksiyasi yozilmadi
+//     setTimeout(() => {
+//         const product = {
+//             name: "car",
+//             color: "black",
+//         };
+//         console.log("Processing data ... ");
+//         resolve(product);
+//     }, 2000);
+// });
+// req.then((data) => {
+//     return new Promise((resolve, reject) => {
+//         //aslida callback funksiyada return yozilgan bo'ladi yani ko;rinmeydigan holatda bo'ladi yani newdan oldinh aftamatik tarzda return bor bo'ladi yani new o'zgaruvchi conctructor bo'lgani uchun
+//         setTimeout(() => {
+//             data.status = "Ordered";
+//             console.log("Get data ...");//yani datani oldi keyin esa novbatdagi qatordan rejectni oldi reject esa false yani ishlamaganda ishlatiladi
+//             reject(data); //yani b u yerda reject yani false funksiya yozilgani uchun something went wrong ishladi  catch bilan chaqirilib reject funksiya ishlatildi
+//         }, 2000);
+//     });
+// })
+//     .then((result) => console.log(result)) //result yani umumiy natija rezultat keladi yani log bilan umumiy natija ko'rsatilsin deyildi keyin pastdan finally metodi orqali ohiri holat yani logda fetching end yozildi
+//     .catch(() => console.log("Something went wrong"))
+//     .finally(() => console.log("Fetching end"));
 
 // console.log("Request data...");
 // const req = new Promise((resolve) => {
@@ -1813,14 +1813,17 @@ req.then((data) => {
 //         setTimeout(() => resolve(), time);
 //     });
 // };
-// Promise.all([request(1000), request(2000), request(3000)]).then(()=> console.log('All '))
+// //Promise all deghan metod qabul qiladi va bu metod promislarni massiv ko'rinishida qabul qiladi
+// Promise.all([request(1000), request(2000), request(3000)]).then(() =>
+//     console.log("All ")//yani 3 sekundda keyin all chiqadi  chunki all hamm apromislarni yani uchchala promislarni ishga tushishini kutib turadi va keyin then bloki   ishleydi 
+// );
 
 // const request = (time) => {
 //     return new Promise((resolve) => {
 //         setTimeout(() => resolve(), time);
 //     });
 // };
-// Promise.race([request(1000), request(2000), request(3000)]).then(()=> console.log('All '))
+// Promise.race([request(1000), request(2000), request(3000)]).then(()=> console.log('All '))//race metodi poyga qilib beradi yani birinchi qaysi promise ishlasa o'shani chiqarib beradi//yani race qaysi promise birinchi ishlasa then blokini ishga tushurib yuboradi bu darsda promiseni ikkitda metodlari ishlatib ko'rildi
 
 ///////////////////////////Fatch API darsi 3-modul loyihada amaliy qilindi////////////////////////////
 /////API - Application Programming interfice
