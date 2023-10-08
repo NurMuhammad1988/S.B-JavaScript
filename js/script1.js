@@ -1815,7 +1815,7 @@
 // };
 // //Promise all deghan metod qabul qiladi va bu metod promislarni massiv ko'rinishida qabul qiladi
 // Promise.all([request(1000), request(2000), request(3000)]).then(() =>
-//     console.log("All ")//yani 3 sekundda keyin all chiqadi  chunki all hamm apromislarni yani uchchala promislarni ishga tushishini kutib turadi va keyin then bloki   ishleydi 
+//     console.log("All ")//yani 3 sekundda keyin all chiqadi  chunki all hamm apromislarni yani uchchala promislarni ishga tushishini kutib turadi va keyin then bloki   ishleydi
 // );
 
 // const request = (time) => {
@@ -1830,3 +1830,60 @@
 /////DOM API -
 /////GOOGLE MAP API
 /////GOOGLE PLEASE API
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// Map filter reduce//massivni metodlari
+
+//for each metodi massivlarimizni faqat intiratsya qilib beradi
+
+// //Map methodi
+// const car = ['MErc', 'BmB', 'RolCe RoyCe']
+// const arr = car.map(item =>item.toLocaleLowerCase())
+// console.log(arr);// map metodi orqali tolovercase metodi ishlatilib harflar bir hil mayda qilindi yani yani massivda mayda harflar bilan yaratildi //yani map metodi yani massiv qaytarib beradi//mep yangi massiv qaytaradi eski massivni qiymatini o'zgartirib
+
+// //Filter metodi buham yangi massiv qaytaradi filtir qilib
+// const car = ['mercedes benz', 'bmw', 'audi', 'rolse royce']
+// const arr =car.filter(item => item.length < 5)
+// console.log(arr);//yuqoridagi filter metodi orqali massivlarni harfi 5 tadan kichkinasi yangi massivda yaratildi yani eski car o'zgaruvchini ichidagi massivlar yangi o'zgaruvchi ichida filter metodi orqali harflar soni 5 tadan kami tanlab olinib yangi massivda qaytarildi
+
+// //Filter metodi buham yangi massiv qaytaradi filtir qilib
+// let car = ["mercedes benz", "bmw", "audi", "rolse royce"];
+// car = car.filter((item) => item.length < 5);
+// console.log(car);//yani let bilan qilish yahshiroq chunki qayta qayta yangi o'zgaruvchi ochilmasligi uchun //yuqoridagi filter metodi orqali massivlarni harfi 5 tadan kichkinasi yangi massivda yaratildi yani eski car o'zgaruvchini ichidagi massivlar yangi o'zgaruvchi ichida filter metodi orqali harflar soni 5 tadan kami tanlab olinib yangi massivda qaytarildi
+
+// //Some VA Every metodlari boolean qiymat qaytaradi
+// const arr = [1, "nur", true];
+// // console.log(arr.some((item) => typeof item === "number"));//yani some metodi arr o'zgaruvchisini ichidagi massivlardan qaysinisi typeof da to'g'ri ko'rsatilgan bo'lsa faqat o'shanisini true deb qaytaradi yani bitta bo'lsaham massivni ichida typeofda ko'rsatilgan malumot turi bor bo'lsa o'shani true deb ko'rsatadi yani massivda san typeof orqali izlagan malumot bor deb trueni yani boolean malumot turini qaytaradi ko'rsatadi//
+
+// //Every VA Some metodlari boolean qiymat qaytaradi
+// const arr = [1, "nur", true];
+// console.log(arr.every((item) => typeof item === "number"));//yani every metodi arrni ichidagi massivni hamma qiymatini tekshiradi shunda typoefdagi malumot turi number bo'lgani uchun va massivda ham number ham boolean ham string malumot turi bo'lgani uchun bu joyda false qaytaradi yani everyham boolean malumot turi sifatida falsedan foydalanadi chunki arr massivini ichida hamasi number malumot turi
+
+// //Every VA Some metodlari boolean qiymat qaytaradi
+// const arr = [1, , 2, 3, 4, 5];
+// console.log(arr.every((item) => typeof item === "number"));//bu yerda esa every true qaytaradi chungi typeofda qattiy teng qilingan malumot turi number
+
+// //Reduce metodi bu massivlarni bir hil ko'rinis hga keltiradi yani qandeydur bitta qiymat qaytaradi
+// const arr = [4, 32, 1, 3];
+// //         yani bu reduce metodini qanday ishlashi + da
+// //                       0       4
+// //                       4      32
+// //                       36      1
+// //                       37      3
+// //                       40      0
+// const res = arr.reduce((sum, current) => sum + current); //yani sum ishga tushandan birinchi qiymati 0 bo'ladi keyin current 4 bo'lib qo'shiladi//reduce metodi hamma massivlarni hissoblab umumiy bitta qiymat qaytaradi
+// console.log(res);
+
+// //Reduce metodi bu massivlarni bir hil ko'rinis hga keltiradi yani qandeydur bitta qiymat qaytaradi
+// const arr = [4, 32, 1, 3];
+// //yani bu reduce metodini qanday ishlashi + da 3 chi metod bilan
+// //                       10      4
+// //                       14      32
+// //                       46      1
+// //                       47      3
+// //                       50      0
+// const res = arr.reduce((sum, current) => sum + current, 10); ////3 chi parametir number qabul qiladi va bu number sumga yani boshidagi parametriga qo'shiladi shunda umumiy javob 50 bo'ladi/////////yani sum ishga tushandan birinchi qiymati 0 bo'ladi keyin current 4 bo'lib qo'shiladi//reduce metodi hamma massivlarni hissoblab umumiy bitta qiymat qaytaradi
+// console.log(res);
+
+// const arr = ["bmw", "merc", "rollce royce"];
+// const res = arr.reduce((sum,current)=> `${sum}, ${current}`);
+// console.log(res);//reduce metodi orqali nmassiv ko'rinishidagi malumotni oddiy yozuv ko'rinishiga keltirildi
