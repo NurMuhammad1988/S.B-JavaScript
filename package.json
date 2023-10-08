@@ -9,7 +9,9 @@
   "author": "NurMuhammad",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^5.3.2"
+    "bootstrap": "^5.3.2",
+    "edge.js": "^5.5.1",
+    "tailwind": "^4.0.0"
   },
   "devDependencies": {
     "cors": "^2.8.5"
