@@ -1887,3 +1887,6 @@
 // const arr = ["bmw", "merc", "rollce royce"];
 // const res = arr.reduce((sum,current)=> `${sum}, ${current}`);
 // console.log(res);//reduce metodi orqali nmassiv ko'rinishidagi malumotni oddiy yozuv ko'rinishiga keltirildi
+
+/////////////////////////////////////NPM/////////////////////////
+
