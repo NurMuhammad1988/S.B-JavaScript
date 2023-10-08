@@ -1,0 +1,11 @@
+{
+  "name": "s.b-javascript",
+  "version": "1.0.0",
+  "description": "my abstract with the teacher S.B",
+  "main": "script1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "NurMuhammad",
+  "license": "ISC"
+}
