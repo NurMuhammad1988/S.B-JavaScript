@@ -1,0 +1,317 @@
+{
+  "menu": [
+    {
+      "img": "img/tabs/1.png",
+      "altimg": "usual",
+      "title": "Plan 'Usual'",
+      "descr": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.",
+      "price": 10
+    },
+    {
+      "img": "img/tabs/2.jpg",
+      "altimg": "plan",
+      "title": "Plan 'Premium'",
+      "descr": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.",
+      "price": 20
+    },
+    {
+      "img": "img/tabs/3.jpg",
+      "altimg": "vip",
+      "title": "Plan 'VIP'",
+      "descr": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.",
+      "price": 30
+    }
+  ],
+  "request": [
+    {
+      "name": "nur.yorov@mail.ru",
+      "phone": "+99891-590-04-06",
+      "id": 1
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "+998 99 159 04 06",
+      "id": 2
+    },
+    {
+      "name": "nur.yorov@mail.ru",
+      "phone": "+99891-590-04-06",
+      "id": 3
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "+99891-590-04-06",
+      "id": 4
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "+998 (99) 816-91-93",
+      "id": 5
+    },
+    {
+      "name": "qwQWqwqW",
+      "phone": "qwQWqw",
+      "id": 6
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 7
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 8
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 9
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 10
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 11
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 12
+    },
+    {
+      "name": "000000000000000",
+      "phone": "hhhhhhhhhhhhhhhhhhh",
+      "id": 13
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "+99891-590-04-06",
+      "id": 14
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 15
+    },
+    {
+      "name": "xxxxxxxxxxxxxxxx",
+      "phone": "xxxxxxxxxxxxxxxxxxxxxxxx",
+      "id": 16
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 17
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 18
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "+99891-590-04-06",
+      "id": 19
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 20
+    },
+    {
+      "name": "farida",
+      "phone": "4444444444444444444444",
+      "id": 21
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 22
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 23
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 24
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 25
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 26
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 27
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 28
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 29
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 30
+    },
+    {
+      "name": "nur.yorov@mail.ru",
+      "phone": "967) 326-40-11",
+      "id": 31
+    },
+    {
+      "name": "firdavs",
+      "phone": "998902971990",
+      "id": 32
+    },
+    {
+      "name": "Musojon",
+      "phone": "999999999999999999",
+      "id": 33
+    },
+    {
+      "name": "Farida Sultonova",
+      "phone": "+998991351416",
+      "id": 34
+    },
+    {
+      "name": "Hojar",
+      "phone": "Yorova",
+      "id": 35
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 36
+    },
+    {
+      "name": "zzzzzzzzzzzzzzzzzzzzzzz",
+      "phone": "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz",
+      "id": 37
+    },
+    {
+      "name": "nur.yorov@mail.ru",
+      "phone": "967) 326-40-11",
+      "id": 38
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 39
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 40
+    },
+    {
+      "name": "afaffafafafadadadsasdadadasdadasddadadasdad ",
+      "phone": "967) 326-40-11",
+      "id": 41
+    },
+    {
+      "name": "nur.yorov@mail.ru",
+      "phone": "967) 326-40-11",
+      "id": 42
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 43
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 44
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 45
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 46
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 47
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 48
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 49
+    },
+    {
+      "name": "nur.yorov@mail.ru",
+      "phone": "+99891-590-04-06",
+      "id": 50
+    },
+    {
+      "name": "nur.yorov@mail.ru",
+      "phone": "967) 326-40-11",
+      "id": 51
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 52
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 53
+    },
+    {
+      "name": "nur.yorov@mail.ru",
+      "phone": "+99891-590-04-06",
+      "id": 54
+    },
+    {
+      "name": "1111111111111111111111111111111111",
+      "phone": "111111111111111111111111111111111111111111111111111111111",
+      "id": 55
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "967) 326-40-11",
+      "id": 56
+    },
+    {
+      "name": "Nurmuhammad",
+      "phone": "+99891-590-04-06",
+      "id": 57
+    },
+    {
+      "name": "nur.yorov@mail.ru",
+      "phone": "967) 326-40-11",
+      "id": 58
+    }
+  ]
+}
