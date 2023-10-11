@@ -1893,3 +1893,6 @@
 /////////////////json server 3-mdul-loyiha-form-json-with-the-xampp failida git hubda alohida bor shu nomli file
 
 ///////////////////////////////////////async await 3 modul loyihada amaliy qilindi
+///get request
+//axios
+//sliderham  3 modul loyihada amaliy qilindi
