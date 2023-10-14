@@ -24,7 +24,7 @@
 //     //readyState
 // });
 //////////////////////////////////////////////////////////////////////////////////////////////////
-//AJAX o'zi nima? yani AJAX = Asynchronous JavaScript And XML.yani bu ajax texnalogiyasi bilan serverga get so'rov yuborilganda kelgan javob vaqtida sahifa qayta yuklanmaydi yani masalan bitta pageda turgan holda uni faqatgin akerakli joyigagina bosib serverdan malumot chaqirilganda page butunlay emas faqat so'rov jo'natilgan joyigina qayta yuklanadi yani butun boshli page qayta yuklanmaydi masalan qandeydur checkedga galichka qo'yilib yoki inputga malumot kirg'azib yoki inputdan malumot olish jaroyonida sahifa yani page butunlay qayta yuklanmaydi faqat so'rob kirg'izilgan yoki malumot olingan joyigina qayta yuklanadi
+//AJAX o'zi nima? yani AJAX = Asynchronous JavaScript And XML.yani bu ajax texnalogiyasi bilan serverga get so'rov yuborilganda kelgan javob vaqtida sahifa qayta yuklanmaydi yani masalan bitta pageda turgan holda uni faqatgina kerakli joyigagina bosib serverdan malumot chaqirilganda page butunlay emas faqat so'rov jo'natilgan joyigina qayta yuklanadi yani butun boshli page qayta yuklanmaydi masalan qandeydur checkedga galichka qo'yilib yoki inputga malumot kirg'azib yoki inputdan malumot olish jaroyonida sahifa yani page butunlay qayta yuklanmaydi faqat so'rov kirg'izilgan yoki malumot olingan joyigina qayta yuklanadi
 //bu yerda current.json file ochilib ichiga malumot qo'yildi current js dan huddi serverdan  foydalanganday holat yuzaga keltirildi (dars tajribasi uchun)
 const uzs = document.querySelector("#uzs"),//htmldan chaqirilish bu id
     usd = document.querySelector("#usd");//htmldan chaqirilish bu id

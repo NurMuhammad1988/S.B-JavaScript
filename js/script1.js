@@ -1536,7 +1536,7 @@
 
 // class Car {
 //     //classlarni nomi doim katta harflar bilan boshlanadi
-//     constructor(name, color, speed) {//Yani bitta class yozib uni hohlagancha yangi o'zgaruvchiga olib classni icghidagi qiymatlarni qayta qayta ishlatish mumkun//bu global class yoki construksiya desaham bo'ladi
+//     constructor(name, color, speed) {//Yani bitta class yozib uni hohlagancha yangi o'zgaruvchiga olib classni ichhidagi qiymatlarni qayta qayta ishlatish mumkun//bu global class yoki construksiya desaham bo'ladi
 //         this.name = name;
 //         this.color = color;
 //         this.speed = speed;
@@ -1896,3 +1896,4 @@
 ///get request
 //axios
 //sliderham  3 modul loyihada amaliy qilindi
+//caruselham 3 modulda qilindi
