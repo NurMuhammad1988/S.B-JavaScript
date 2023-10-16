@@ -1897,3 +1897,4 @@
 //axios
 //sliderham  3 modul loyihada amaliy qilindi
 //caruselham 3 modulda qilindi
+//dotham 3 modulda qilindi
