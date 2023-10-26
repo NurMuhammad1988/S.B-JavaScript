@@ -1899,3 +1899,59 @@
 //caruselham 3 modulda qilindi
 //dotham 3 modulda qilindi
 //logalstorage darsi localstoraje fileda
+
+/////// Oddiy iboralar regular exprition ekspreshin
+
+// new RegExp("pattern", "flags")// bu eski hoatdagi yozilishi
+
+// const firstName = prompt("What is your name","")
+// // const regex =/a/ //yani /a/ bu tartibda yozilganda searchni ichidagi regaxdan faqat kichina harfli bitta a harfini izlaydi
+// // const regex =/a/g  //yani bu holatda yozilganda butun boshli so'zdan yani hammasidan global izleydi masalan a harfini marhamat degan so'zda 3 ta a harfi bor global yani g belgisi shu so'zdan 3 ta a harfini topib beradi
+// const regex =/a/i // bu esa katta harf kichkina harf farqi yo'q birday izlaydi
+// // const regex =/a/ig // shunday holatdaham yozish mumkun yani aralashtirib
+// console.log(firstName.search(regex));
+
+// const firstName = prompt("What is your name","")
+// const regex =/a/g//bu global bo'lgani uchun butun boshli so'zdagi hamma a harflarini massivda qaytaradi
+// console.log(firstName.match(regex));//yani match metodi solishtirib izlaydi
+
+// const password = prompt("Your password");
+// console.log(password.replace(/./g, "* "));// yani bu holatda replace bu bilan =>/./ hamma narsani masalan belgilarniham misol uchun bularniham qamrab oladi,./';\[] hullas har qanday belginiham qamrob olib paroldagi hech qanday malumotni ko'rsatmeydi bu yulduzcha esa "*" yashiringan yani replace bo'lgan parolni harflarinbi ustiga yani o'rniga qo'yiladi shunda parol yozilganda ko'rinmaydi//bu ish hesh deyiladi yani parolni hesh qildik
+
+// const password = prompt("Your password");// special character
+// console.log(password.replace(/\|/g, "*")); //yani bunishi vapshe ishkal hullas (/\|/g, "*")=<manashu yozilishda parolni ichiga yoki umuman so'zlar harflar belgilar izlanganda /\|/ shunday yoziladi bu joyda |<=manashu belgi qanday izlanishi yozilgan//YANI BU JOYDA |<=BELGISI PAROL VAZIFASIDA//yani replace(/\|/g, "*") //<=manashu yotiq belgi ichida |<=bu yozilgan yani faqat shuni yulduzcha ichiga oladi //yani har qanday belgini shunday holatda yozish mumkun masalan bunday  (/\$/g, "*") yoki bunday (/\&/g, "*")
+
+//  const num = '12-34-56-78-90'
+//  console.log(num.replace(/-/g, ":"));//bu holatda string malumotimiz bunday =>12:34:56:78:90 holatda bo'ladi yani o'rni almashadi
+
+// const name = prompt("Name", '')
+// const regexp =/nur/gi// UZUN TEXTNI ICHIDAN BO'LSAHAM NURNIU TOPSA TRUE QAYTARADI G YANI GLOBAL SABAB//YANI KATTA HARFLAR BILANHAM NUR YOZILSA TRUE QAYTARADI I SABAB
+// // console.log(regexp.test(name));//test metodi orqali promptga yozilgan so'zdan nurni izlaydi agar so'zlar ichida nur bor bo'lsa true agar yo'q bo'lsa false qaytaradi
+// if(regexp.test(name)){
+//     console.log("Welcome Nur");
+// }else{
+//     console.log("You are not admin");
+// }
+
+// const name = prompt("Name", "");
+// const regexp = / /gi;//yani probelham qo'yish mumkun yani client probelsiz ishlasa false probel bilan ishlasa yani malumot yozsa true chiqadi
+// console.log(regexp.test(name));
+
+// const name = prompt("Name", "");
+// const regexp = / /gi;
+// console.log(regexp.test(name));
+//pastda qo'shimcha regular expreshinlar  
+//.....\d // \d yani faqat sonlarni qidiradi 
+//.....\w // \w yani faqat so'zlarni qidiradi
+//.....\s // \s yani faqat spacelarni qidiradi
+//.....\D // \D yani num yani not a number
+//.....\W // \W yani  not a word
+//.....\S // \S yani not a space
+
+// const name = prompt("Name", "");
+// const regexp = /\d/gi;
+// console.log(name.match(regexp));//yuqoridagi grafikga misol yani bu holatda faqat raqamlarni izlaydi
+
+// const name = prompt("Name", "");
+// const regexp = /\D/gi;
+// console.log(name.match(regexp));//yuqoridagi grafikga misol yani bu holatda faqat harflarni izlaydi raqamlarni qaytarmaydi
