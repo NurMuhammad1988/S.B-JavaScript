@@ -1940,8 +1940,8 @@
 // const name = prompt("Name", "");
 // const regexp = / /gi;
 // console.log(regexp.test(name));
-//pastda qo'shimcha regular expreshinlar  
-//.....\d // \d yani faqat sonlarni qidiradi 
+//pastda qo'shimcha regular expreshinlar
+//.....\d // \d yani faqat sonlarni qidiradi
 //.....\w // \w yani faqat so'zlarni qidiradi
 //.....\s // \s yani faqat spacelarni qidiradi
 //.....\D // \D yani num yani not a number
@@ -1955,3 +1955,137 @@
 // const name = prompt("Name", "");
 // const regexp = /\D/gi;
 // console.log(name.match(regexp));//yuqoridagi grafikga misol yani bu holatda faqat harflarni izlaydi raqamlarni qaytarmaydi
+
+////////Regex darsi 3-modul louihada qilindi lekin funksiyani ishlata olmadim yani deleteNotDigers nomli funksiyani ishlataolmadim
+
+///////////////////////////////////////////Getters and Setters////////////////////////////
+
+// const car = {//objectni ichiga hususiyatlar yani propertys yozilganda oraliqga vergul qo'yish kerak
+//     name: "bmw",
+//     color: "black",
+
+//     get carName() {//get malumotni olish yani propertylar orqali
+//         return this.name
+//     },
+
+//     set carName(name){//set malumotni  berish yani propertylar orqali
+//         return this.name = name
+//     }
+
+// };
+// console.log(car.carName);
+// console.log(car.carName =  "merc");
+
+//////////////////inkapsulatsya constructor/////////////////////////
+
+// function Car(name, color) {
+//     this.name = name;
+//     this.color = color;
+//     this.info = function () {
+//         console.log(`name of car ${this.name}, color is ${this.color}`);
+//     };
+// }
+
+// const bmw = new Car("bmw", "black");
+// bmw.info()
+
+// function Car(name, color, ishlabChiqarilganZavodi) {
+//     this.name = name;
+//     this.color = color;
+//     this.ishlabChiqarilganZavodi = ishlabChiqarilganZavodi;
+//     this.info = function () {
+//         console.log(`name of car ${this.name}, color is ${this.color},${this.ishlabChiqarilganZavodi}`);
+//     };
+// }
+
+// const bmw = new Car("bmw", "black", 'jin urgur gmda ishlab chiqarilgan');
+// bmw.info();
+
+// function Car(name, color) {
+//     this.name = name;
+//     this.color = color;
+//     this.info = function () {
+//         console.log(`name of car: ${this.name}, color is ${this.color}`);
+//     };
+// }
+// const bmw = new Car("bmw", "black");
+// bmw.name = "Merc"//manashunday qilib o'zgartirish mumkunmas butun constructor function o'zgarib ketadi yani malumoti o'zgarib ketadi
+// bmw.info()
+
+// function Car(name, color) {
+//     let carName = name; //yani bu holatdan tashqaridan constructor funksiyani o'zgartirib bo'lmaydi
+//     this.color = color;
+//     this.info = function () {
+//         console.log(`name of car: ${carName}, color is ${this.color}`);
+//     };
+//     this.getName = function () {
+//         return carName;
+//     };
+//     this.setName = function (name) {
+//         carName = name;
+//     };
+// }
+// const bmw = new Car("bmw", "black");
+// // bmw.name = "Merc"//manashunday qilib o'zgartirish mumkunmas butun constructor function o'zgarib ketadi yani malumoti o'zgarib ketadi
+// console.log(bmw.getName());
+// bmw.info();
+
+// function Car(name, color, bonus) {
+//     this.name = name;
+//     this.color = color;
+//     let extraBonus = bonus;//yani bu joyda let o'zgaruvchisi bilan qilinsa tashqaridan o'zgartirib bo'lmaydi bu bonusni mahfiy bo'lishi uchun letda qilindi
+
+//     this.info = function () {
+//         console.log(`Name of car: ${name}, color is ${this.color}.There is some bonus ${extraBonus}`);
+//     };
+
+//     this.getBonus = function () {
+//         return extraBonus;
+//     };
+
+//     this.setBonus = function (bonus) {
+//         if (typeof bonus === "number" && bonus > 0 && bonus < 100) {
+//             extraBonus = bonus;
+//         }else{
+//             console.log("Something went wrong");
+//         }
+//     };
+// }
+// const bmw = new Car("bmw", "black",10 );
+// console.log(bmw.getBonus());
+// bmw.setBonus(20)//yani constructor funksyani tashqaridan hato yo'l bilan o'zgartirib bo'lmaydi bu uchun shu metodlar orqali himoyalab qo'yiladi agar bu joyga 100 dan baland bonus yozilsa something went wrong chiqadi
+// bmw.info();//bu Car constructor funksiyada incapsulatsya yani funksiyani o'zgarib ketishidan himoya qilaydigan metodlar o'tildi
+
+//////////////////////////////////////inkapsulatsiya constructor////////////////
+
+class Car {
+    constructor(name, color, bonus) {
+        this.name = name;
+        this.color = color;
+        this._extraBonus = bonus;//yani bu _ ladash deyiladi buni ko'rgan boshqa dasturchi extraBonusni tashqaridan o'zgartirish uchun metodlar borlogini tushunadi
+    }
+    info() {
+        console.log(
+            `Name of car: ${this.name}, color is ${this.color}.There is some bonus ${this._extraBonus}`
+        );
+    }
+
+    get bonus() {//getter
+        return this._extraBonus;
+    }
+ 
+    set bonus(bonus) {//setter
+        if (typeof bonus === "number" && bonus > 0 && bonus < 100) {
+            this._extraBonus = bonus;
+        } else {
+            console.log("Something went wrong");
+        }
+    }
+}
+
+const bmw = new Car("bmw", "black", 10);
+// console.log(bmw._extraBonus);
+// bmw.setBonus(120);//bu holatyda went wrong chiqadi
+console.log(bmw.bonus);
+console.log(bmw.bonus= 90);
+bmw.info();
