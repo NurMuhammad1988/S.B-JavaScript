@@ -2058,34 +2058,36 @@
 
 //////////////////////////////////////inkapsulatsiya constructor////////////////
 
-class Car {
-    constructor(name, color, bonus) {
-        this.name = name;
-        this.color = color;
-        this._extraBonus = bonus;//yani bu _ ladash deyiladi buni ko'rgan boshqa dasturchi extraBonusni tashqaridan o'zgartirish uchun metodlar borlogini tushunadi
-    }
-    info() {
-        console.log(
-            `Name of car: ${this.name}, color is ${this.color}.There is some bonus ${this._extraBonus}`
-        );
-    }
+// class Car {
+//     constructor(name, color, bonus) {
+//         this.name = name;
+//         this.color = color;
+//         this._extraBonus = bonus;//yani bu _ ladash deyiladi buni ko'rgan boshqa dasturchi extraBonusni tashqaridan o'zgartirish uchun metodlar borlogini tushunadi
+//     }
+//     info() {
+//         console.log(
+//             `Name of car: ${this.name}, color is ${this.color}.There is some bonus ${this._extraBonus}`
+//         );
+//     }
 
-    get bonus() {//getter
-        return this._extraBonus;
-    }
- 
-    set bonus(bonus) {//setter
-        if (typeof bonus === "number" && bonus > 0 && bonus < 100) {
-            this._extraBonus = bonus;
-        } else {
-            console.log("Something went wrong");
-        }
-    }
-}
+//     get bonus() {//getter
+//         return this._extraBonus;
+//     }
 
-const bmw = new Car("bmw", "black", 10);
-// console.log(bmw._extraBonus);
-// bmw.setBonus(120);//bu holatyda went wrong chiqadi
-console.log(bmw.bonus);
-console.log(bmw.bonus= 90);
-bmw.info();
+//     set bonus(bonus) {//setter
+//         if (typeof bonus === "number" && bonus > 0 && bonus < 100) {
+//             this._extraBonus = bonus;
+//         } else {
+//             console.log("Something went wrong");
+//         }
+//     }
+// }
+
+// const bmw = new Car("bmw", "black", 10);
+// // console.log(bmw._extraBonus);
+// // bmw.setBonus(120);//bu holatyda went wrong chiqadi
+// console.log(bmw.bonus);
+// console.log(bmw.bonus= 90);
+// bmw.info();
+
+///////////////////////////////Webpack darsi webpack fileda///////////////////////
