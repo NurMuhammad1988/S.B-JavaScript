@@ -2091,3 +2091,5 @@
 // bmw.info();
 
 ///////////////////////////////Webpack darsi webpack fileda///////////////////////
+
+///////////////////////////////Webpack config darsi webpack config fileda [3 modul config qilindi] va config sabab bazi funcsiyalar ishlamay qoldi shuni to'g'irlab chiq///////////////////////
