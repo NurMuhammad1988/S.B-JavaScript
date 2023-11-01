@@ -1,7 +1,9 @@
 // "use strict";
 
 window.addEventListener("DOMContentLoaded", () => {
-
+    
+   // <!-- //eslatma: yani webpack qilinganda webpackni default nastroykasida bundle.js papkasi bor shu papkani loyihani html papkasiga chaqirib qo'yish kerak yani script jsda shu bundle.js papkasi bo'lishi kerak{html file ohiriga qara} //yani distni ichida boladi bundle.js   -->////
+   
     const clas = require("../modules/class"),
     form = require("../modules/form"),
     loader = require("../modules/loader"),
