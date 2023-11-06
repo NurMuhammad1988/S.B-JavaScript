@@ -1,31 +1,45 @@
 // "use strict";
 
+import classes from "../modules/class";
+import form from "../modules/form";
+import loader from "../modules/loader";
+import modal from "../modules/modal";
+import slider from "../modules/slider";
+import tab from "../modules/tab";
+import timer from "../modules/timer";
+import { openModal } from "../modules/modal";
 
 window.addEventListener("DOMContentLoaded", () => {
-
-    const clas = require("../modules/class"),
-    form = require("../modules/form"),
-    loader = require("../modules/loader"),
-    modal = require("../modules/modal"),
-    slider = require("../modules/slider"),
-    tab = require("../modules/tab"),
-    timer = require("../modules/timer")
-
-
-    clas()
-    form()
-    loader()
-    modal()
-    slider()
-    tab()
-    timer()
-
-
+    const modalTimerId = setTimeout(
+        () => openModal(".modal", modalTimerId),
+        5000
+    );
+    classes();
+    form("form", modalTimerId);
+    loader();
+    modal("[data-modal]", ".modal", modalTimerId);
+    slider({ 
+     container: ".offer__slider",
+     nextArrow: ".offer__slider-next",
+     prevArrow:".offer__slider-prev",
+     slide:".offer__slide",
+     totalCounter:"#total",
+     currentCounter:"#current",
+     wrapper:".offer__slider-wrapper",
+     field:".offer__slider-inner"
+     });
+    tab(
+        ".tabheader__item",
+        ".tabcontent",
+        ".tabheader__items",
+        "tabheader__item_active"
+    );
+    timer(".timer", "2023-12-31");
 
     // const tabsParent = document.querySelector(".tabheader__items"),
     //     tabs = document.querySelectorAll(".tabheader__item"),
     //     tabsContent = document.querySelectorAll(".tabcontent")
-        // loader = document.querySelector(".loader");
+    // loader = document.querySelector(".loader");
 
     // setTimeout(() => {
     //     loader.style.opacity = "0";
@@ -193,7 +207,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //         }
 
     //         element.innerHTML = `
-            
+
     //         <img src=${this.src} alt=${this.alt} />
     //         <h3 class="menu__item-subtitle">${this.title}</h3>
     //         <div class="menu__item-descr">${this.descr}</div>
@@ -265,7 +279,7 @@ window.addEventListener("DOMContentLoaded", () => {
     ////     "Plan 'VIP'",
     ////     "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit nesciunt facere, sequi exercitationem praesentium ab cupiditate beatae debitis perspiciatis itaque quaerat id modi corporis delectus ratione nobis harum voluptatum in.",
     ////     30,
-   ////     ".menu .container",
+    ////     ".menu .container",
     ////     "menu__item"
     //// ).render();
 
@@ -377,7 +391,6 @@ window.addEventListener("DOMContentLoaded", () => {
     //   <div class="modal__title">${message}</div>
 
     //   </div>
-
 
     //     `;
     //     document.querySelector(".modal").append(thanksModal);
@@ -509,7 +522,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //         slideIndex = slides.length;
     //     } else {
     //         slideIndex--;
-    //     }//??????????????????????????????? 
+    //     }//???????????????????????????????
     //     /////////////////////////////////
     //     //// if (slideIndex = 1) {
     //     ////     slideIndex = slides.length;
@@ -540,10 +553,6 @@ window.addEventListener("DOMContentLoaded", () => {
     //         dots[slideIndex - 1].style.opacity = 1;
     //     });
     // });
-
- 
-
-   
 });
 
 // npx json-server --watch db.json //windowsda shunday yozilar ekan

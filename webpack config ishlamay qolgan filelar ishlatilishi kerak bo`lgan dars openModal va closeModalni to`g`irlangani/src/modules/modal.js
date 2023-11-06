@@ -1,12 +1,4 @@
-// export default function openModal()//11111111111111
-// const openModalExport = openModal(); //222222222222222
 
-// export {openModal,closeModal};
-
-// module.exports.openModal = function () {};
-
-// module.exports = openModal;
-// module.exports = closeModal;
 
 function modal() {
     const modalTrigger = document.querySelectorAll("[data-modal]"),
@@ -25,8 +17,8 @@ function modal() {
         clearInterval(modalTimerId);
     }
 
-    module.exports = openModal;
-    module.exports = closeModal;
+    module.exports = openModal;//BUNDAN KEYINGI FIX BUG DARSIDA LOCAL FUNCSIYANI EXPORT INPORT QILISHNI BOSHQA YO'LI BORT USTOZ O'TGANI
+    module.exports = closeModal;//BUNDAN KEYINGI FIX BUG DARSIDA LOCAL FUNCSIYANI EXPORT INPORT QILISHNI BOSHQA YO'LI BORT USTOZ O'TGANI
 
     modalTrigger.forEach((item) => {
         item.addEventListener("click", openModal);
